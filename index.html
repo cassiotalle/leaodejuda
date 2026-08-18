@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Grupo Escoteiro Leão de Judá | 15 Anos de Tradição e Valores em Diadema</title>
+    <meta name="description"
+        content="Grupo Escoteiro Leão de Judá em Diadema/SP. Formando jovens protagonistas através da Excelência Técnica Escoteira e dos valores cristãos da Promessa. Reuniões aos sábados das 09h às 11:30h.">
+    <meta name="theme-color" content="#8A151B">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bordo: {
+                            DEFAULT: '#8A151B',
+                            dark: '#5C0D11',
+                            hover: '#A81F26',
+                            soft: '#FBF2F2',
+                            light: '#C2232B'
+                        },
+                        dourado: {
+                            DEFAULT: '#D3A84B',
+                            dark: '#B0862F',
+                            light: '#E2C175',
+                            soft: '#FCF8EE'
+                        },
+                        escuro: {
+                            DEFAULT: '#141414',
+                            card: '#1F1F1F'
+                        },
+                        palha: {
+                            DEFAULT: '#FAF7F2',
+                            dark: '#F0EAE1'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'card-hover': '0 20px 30px -10px rgba(138, 21, 27, 0.15)',
+                        'gold-glow': '0 0 20px rgba(211, 168, 75, 0.35)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Parallax Background Layers */
+        .parallax-hero {
+            background-image: linear-gradient(to bottom, rgba(138, 21, 27, 0.88), rgba(20, 20, 20, 0.92)), url('https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&q=80&w=1920');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .parallax-valores {
+            background-image: linear-gradient(to bottom, rgba(20, 20, 20, 0.88), rgba(138, 21, 27, 0.92)), url('https://images.unsplash.com/photo-1475483768296-6163e08872a1?auto=format&fit=crop&q=80&w=1920');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .parallax-cta {
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.82), rgba(138, 21, 27, 0.88)), url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=1920');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Fallback for touch screens (iOS / Android parallax performance) */
+        @media (max-width: 1024px) {
+
+            .parallax-hero,
+            .parallax-valores,
+            .parallax-cta {
+                background-attachment: scroll;
+            }
+        }
+
+        /* High Contrast Mode CSS Rules */
+        body.high-contrast {
+            background-color: #000000 !important;
+            color: #FFFFFF !important;
+        }
+
+        body.high-contrast section,
+        body.high-contrast header,
+        body.high-contrast footer {
+            background-color: #000000 !important;
+            color: #FFFFFF !important;
+            border-color: #FFD700 !important;
+        }
+
+        body.high-contrast .bg-white,
+        body.high-contrast .bg-palha,
+        body.high-contrast .bg-bordo-soft,
+        body.high-contrast .bg-dourado-soft {
+            background-color: #121212 !important;
+            color: #FFFFFF !important;
+            border: 1px solid #FFD700 !important;
+        }
+
+        body.high-contrast p,
+        body.high-contrast h1,
+        body.high-contrast h2,
+        body.high-contrast h3,
+        body.high-contrast span,
+        body.high-contrast div {
+            color: #FFFFFF !important;
+        }
+
+        body.high-contrast .text-bordo,
+        body.high-contrast .text-dourado,
+        body.high-contrast .text-dourado-dark {
+            color: #FFD700 !important;
+        }
+
+        body.high-contrast a,
+        body.high-contrast button {
+            outline: 2px solid #FFD700 !important;
+        }
+
+        .glass-header {
+            background: rgba(138, 21, 27, 0.96);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Smooth touch scrolling */
+        html {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-palha text-escuro font-body transition-all duration-300 antialiased selection:bg-dourado selection:text-bordo-dark"
+    id="bodyElement">
+
+    <!-- Barra Superior de Acessibilidade e Redes Sociais -->
+    <div class="bg-bordo-dark text-white text-xs py-2 px-3 sm:px-6 border-b border-dourado/30 relative z-50">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+
+            <!-- Horário e Local para visualização rápida em mobile -->
+            <div class="flex items-center gap-3 text-[11px] sm:text-xs">
+                <span class="flex items-center gap-1.5 font-medium">
+                    <i class="fa-solid fa-clock text-dourado"></i>
+                    <span>Sábados: 09h - 11:30h</span>
+                </span>
+                <span class="hidden sm:inline-block text-dourado/40">|</span>
+                <span class="hidden sm:flex items-center gap-1.5 font-medium">
+                    <i class="fa-solid fa-location-dot text-dourado"></i>
+                    <span>Diadema - SP</span>
+                </span>
+            </div>
+
+            <!-- Ferramentas de Acessibilidade & Redes -->
+            <div class="flex items-center space-x-2 sm:space-x-3 text-xs">
+                <div class="flex items-center bg-black/20 rounded-lg p-0.5 border border-white/10">
+                    <button onclick="toggleFontSize(1)" title="Aumentar Fonte"
+                        class="hover:bg-dourado hover:text-escuro w-7 h-7 flex items-center justify-center rounded font-bold transition focus:outline-none"
+                        aria-label="Aumentar tamanho do texto">A+</button>
+                    <button onclick="resetFontSize()" title="Tamanho Normal"
+                        class="hover:bg-dourado hover:text-escuro w-7 h-7 flex items-center justify-center rounded text-[10px] font-bold transition focus:outline-none"
+                        aria-label="Tamanho original do texto">A</button>
+                    <button onclick="toggleFontSize(-1)" title="Diminuir Fonte"
+                        class="hover:bg-dourado hover:text-escuro w-7 h-7 flex items-center justify-center rounded font-bold transition focus:outline-none"
+                        aria-label="Diminuir tamanho do texto">A-</button>
+                </div>
+
+                <button onclick="toggleHighContrast()" title="Alto Contraste"
+                    class="bg-black/20 hover:bg-dourado hover:text-escuro px-2.5 py-1.5 rounded-lg border border-white/10 transition flex items-center gap-1 text-[11px] font-semibold focus:outline-none"
+                    aria-label="Alternar Alto Contraste">
+                    <i class="fa-solid fa-circle-half-stroke text-dourado"></i>
+                    <span class="hidden xs:inline">Contraste</span>
+                </button>
+
+                <span class="text-dourado/40">|</span>
+
+                <div class="flex items-center space-x-1">
+                    <a href="https://www.instagram.com/ge_leaodejuda/" target="_blank" rel="noopener noreferrer"
+                        class="hover:text-dourado w-7 h-7 flex items-center justify-center rounded-full hover:bg-white/10 transition"
+                        aria-label="Instagram Oficial">
+                        <i class="fa-brands fa-instagram text-sm"></i>
+                    </a>
+                    <a href="https://wa.me/5511996467356" target="_blank" rel="noopener noreferrer"
+                        class="hover:text-dourado w-7 h-7 flex items-center justify-center rounded-full hover:bg-white/10 transition"
+                        aria-label="WhatsApp Oficial">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Header / Navbar Principal -->
+    <header class="sticky top-0 z-40 glass-header shadow-md text-white transition-all">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
+            aria-label="Navegação Principal">
+
+            <!-- Logo e Título -->
+            <a href="#inicio"
+                class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-dourado rounded-xl p-1 transition">
+                <div
+                    class="w-11 h-11 sm:w-12 sm:h-12 bg-dourado rounded-xl p-1 transform rotate-45 group-hover:rotate-0 transition-all duration-300 flex items-center justify-center shadow-lg border border-white/20 flex-shrink-0">
+                    <i
+                        class="fa-solid fa-shield-cat text-bordo text-xl sm:text-2xl -rotate-45 group-hover:rotate-0 transition-all duration-300"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span
+                        class="font-heading font-black text-lg sm:text-2xl tracking-wide text-white block leading-none">LEÃO
+                        DE JUDÁ</span>
+                    <span
+                        class="text-dourado text-[10px] sm:text-xs font-bold tracking-widest uppercase block mt-1">Grupo
+                        Escoteiro • 15 Anos</span>
+                </div>
+            </a>
+
+            <!-- Menu Desktop -->
+            <div
+                class="hidden lg:flex items-center space-x-7 font-heading font-semibold text-xs xl:text-sm tracking-wider">
+                <a href="#inicio"
+                    class="hover:text-dourado transition border-b-2 border-transparent hover:border-dourado py-1">INÍCIO</a>
+                <a href="#sobre"
+                    class="hover:text-dourado transition border-b-2 border-transparent hover:border-dourado py-1">QUEM
+                    SOMOS</a>
+                <a href="#ramos"
+                    class="hover:text-dourado transition border-b-2 border-transparent hover:border-dourado py-1">RAMOS
+                    ESCOTEIROS</a>
+                <a href="#valores"
+                    class="hover:text-dourado transition border-b-2 border-transparent hover:border-dourado py-1">NOSSOS
+                    VALORES</a>
+                <a href="#atividades"
+                    class="hover:text-dourado transition border-b-2 border-transparent hover:border-dourado py-1">ENCONTROS</a>
+                <a href="#contato"
+                    class="hover:text-dourado transition border-b-2 border-transparent hover:border-dourado py-1">CONTATO</a>
+            </div>
+
+            <!-- Botão de Inscrição CTA Navbar -->
+            <div class="hidden sm:flex items-center">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNYgY6lo8b4UYHLokWuCgg0rspbuupwT9mJbqn7L3fC3sBqA/closedf"
+                    target="_blank" rel="noopener noreferrer"
+                    class="bg-dourado hover:bg-dourado-light text-escuro font-heading font-bold text-xs xl:text-sm px-5 py-2.5 rounded-full transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-gold-glow flex items-center gap-2 border border-white/20">
+                    <i class="fa-solid fa-user-plus text-xs"></i>
+                    <span>INSCREVA-SE</span>
+                </a>
+            </div>
+
+            <!-- Botão Mobile Hamburger -->
+            <div class="lg:hidden flex items-center">
+                <button id="mobileMenuBtn" onclick="toggleMobileMenu()"
+                    class="text-white hover:text-dourado p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-dourado rounded-lg bg-black/10 active:bg-black/20"
+                    aria-label="Abrir Menu Principal">
+                    <i class="fa-solid fa-bars text-2xl" id="menuIcon"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Drawer Mobile Menu -->
+        <div id="mobileMenu"
+            class="hidden lg:hidden bg-bordo-dark/95 backdrop-blur-xl border-t border-dourado/20 px-4 pt-3 pb-8 space-y-2 font-heading font-semibold text-base transition-all">
+            <a href="#inicio" onclick="toggleMobileMenu()"
+                class="flex items-center gap-3 text-white hover:text-dourado py-3 border-b border-white/10 px-2 rounded-lg hover:bg-white/5 active:bg-white/10">
+                <i class="fa-solid fa-house text-dourado w-5"></i>
+                <span>Início</span>
+            </a>
+            <a href="#sobre" onclick="toggleMobileMenu()"
+                class="flex items-center gap-3 text-white hover:text-dourado py-3 border-b border-white/10 px-2 rounded-lg hover:bg-white/5 active:bg-white/10">
+                <i class="fa-solid fa-users text-dourado w-5"></i>
+                <span>Quem Somos</span>
+            </a>
+            <a href="#ramos" onclick="toggleMobileMenu()"
+                class="flex items-center gap-3 text-white hover:text-dourado py-3 border-b border-white/10 px-2 rounded-lg hover:bg-white/5 active:bg-white/10">
+                <i class="fa-solid fa-sitemap text-dourado w-5"></i>
+                <span>Ramos Escoteiros</span>
+            </a>
+            <a href="#valores" onclick="toggleMobileMenu()"
+                class="flex items-center gap-3 text-white hover:text-dourado py-3 border-b border-white/10 px-2 rounded-lg hover:bg-white/5 active:bg-white/10">
+                <i class="fa-solid fa-shield-halved text-dourado w-5"></i>
+                <span>Nossos Valores</span>
+            </a>
+            <a href="#atividades" onclick="toggleMobileMenu()"
+                class="flex items-center gap-3 text-white hover:text-dourado py-3 border-b border-white/10 px-2 rounded-lg hover:bg-white/5 active:bg-white/10">
+                <i class="fa-solid fa-calendar-check text-dourado w-5"></i>
+                <span>Encontros de Sábado</span>
+            </a>
+            <a href="#contato" onclick="toggleMobileMenu()"
+                class="flex items-center gap-3 text-white hover:text-dourado py-3 border-b border-white/10 px-2 rounded-lg hover:bg-white/5 active:bg-white/10">
+                <i class="fa-solid fa-envelope text-dourado w-5"></i>
+                <span>Contato & Sede</span>
+            </a>
+
+            <div class="pt-4 px-2">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNYgY6lo8b4UYHLokWuCgg0rspbuupwT9mJbqn7L3fC3sBqA/closedf"
+                    target="_blank" rel="noopener noreferrer"
+                    class="block text-center bg-dourado text-escuro font-bold py-3.5 rounded-xl shadow-lg active:scale-95 transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <span>Fazer Inscrição Agora</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio"
+        class="relative parallax-hero min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center text-white text-center px-4 py-16 sm:py-24">
+        <div class="max-w-4xl mx-auto space-y-6 sm:space-y-8 z-10">
+
+            <!-- Badge 15 Anos -->
+            <div
+                class="inline-flex items-center gap-2 bg-dourado/20 border border-dourado/60 px-3.5 py-1.5 rounded-full text-dourado text-xs sm:text-sm font-semibold tracking-wider uppercase backdrop-blur-md shadow-inner">
+                <i class="fa-solid fa-award text-dourado"></i>
+                <span>15 Anos Formando Cidadãos Exemplares</span>
+            </div>
+
+            <!-- Título Principal com Responsividade Otimizada -->
+            <h1
+                class="font-heading font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight sm:leading-none tracking-tight drop-shadow-lg text-white">
+                O JOVEM É PROTAGONISTA DA SUA PRÓPRIA VIDA
+            </h1>
+
+            <!-- Subtítulo e Filosofia do Grupo -->
+            <p
+                class="text-base sm:text-xl md:text-2xl text-gray-200 font-normal max-w-3xl mx-auto leading-relaxed sm:leading-relaxed drop-shadow px-2">
+                Aplicamos a <span class="text-dourado font-bold">Excelência Técnica Escoteira</span> e os <span
+                    class="text-dourado font-bold">Valores Cristãos da Promessa</span> como ferramentas essenciais para
+                o autodesenvolvimento de crianças e jovens em Diadema.
+            </p>
+
+            <!-- Botões Principais de Ação Mobile-First -->
+            <div
+                class="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3.5 sm:gap-5 pt-4 max-w-md sm:max-w-none mx-auto">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNYgY6lo8b4UYHLokWuCgg0rspbuupwT9mJbqn7L3fC3sBqA/closedf"
+                    target="_blank" rel="noopener noreferrer"
+                    class="bg-dourado hover:bg-dourado-light active:bg-dourado-dark text-escuro font-heading font-extrabold text-base sm:text-lg px-8 py-4 rounded-xl shadow-2xl transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 border border-white/30">
+                    <i class="fa-solid fa-file-signature text-xl"></i>
+                    <span>Quero Me Inscrever</span>
+                </a>
+
+                <a href="#sobre"
+                    class="bg-black/40 hover:bg-white/20 active:bg-white/30 border-2 border-white/80 text-white font-heading font-bold text-base sm:text-lg px-8 py-4 rounded-xl transition-all backdrop-blur-md flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-compass text-dourado"></i>
+                    <span>Conheça o Grupo</span>
+                </a>
+            </div>
+
+            <!-- Informações Rápidas de Sábado e Localização -->
+            <div
+                class="pt-6 sm:pt-10 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-6 text-xs sm:text-sm font-medium text-gray-200">
+                <div
+                    class="flex items-center gap-2 bg-black/60 backdrop-blur-md px-4 py-2.5 rounded-xl border border-white/10 w-full sm:w-auto justify-center">
+                    <i class="fa-regular fa-calendar-check text-dourado text-base"></i>
+                    <span>Sábados: 09h às 11:30h</span>
+                </div>
+                <div
+                    class="flex items-center gap-2 bg-black/60 backdrop-blur-md px-4 py-2.5 rounded-xl border border-white/10 w-full sm:w-auto justify-center">
+                    <i class="fa-solid fa-map-location-dot text-dourado text-base"></i>
+                    <span>Av. Alda, 801 - Diadema/SP</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Indicador visual de rolagem -->
+        <a href="#destaques"
+            class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white/70 hover:text-dourado p-2 transition animate-bounce"
+            aria-label="Rolar para os destaques">
+            <i class="fa-solid fa-chevron-down text-2xl"></i>
+        </a>
+    </section>
+
+    <!-- Seção de Cards em Destaque (Overlay) -->
+    <section id="destaques" class="relative z-20 -mt-8 sm:-mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+
+            <!-- Card 1 -->
+            <div
+                class="bg-white rounded-2xl p-5 sm:p-6 shadow-xl border-t-4 border-bordo flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+                <div
+                    class="w-12 h-12 sm:w-14 sm:h-14 bg-bordo-soft rounded-2xl flex items-center justify-center text-bordo text-xl sm:text-2xl font-bold flex-shrink-0">
+                    <i class="fa-solid fa-award text-dourado"></i>
+                </div>
+                <div>
+                    <h2 class="font-heading font-black text-2xl sm:text-3xl text-bordo">15 Anos</h2>
+                    <p class="text-xs sm:text-sm text-gray-600 font-medium">História e tradição sólida na comunidade</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+                class="bg-white rounded-2xl p-5 sm:p-6 shadow-xl border-t-4 border-dourado flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+                <div
+                    class="w-12 h-12 sm:w-14 sm:h-14 bg-dourado-soft rounded-2xl flex items-center justify-center text-dourado-dark text-xl sm:text-2xl font-bold flex-shrink-0">
+                    <i class="fa-solid fa-people-group text-bordo"></i>
+                </div>
+                <div>
+                    <h2 class="font-heading font-black text-2xl sm:text-3xl text-escuro">Centenas</h2>
+                    <p class="text-xs sm:text-sm text-gray-600 font-medium">Jovens impactados e capacitados</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+                class="bg-white rounded-2xl p-5 sm:p-6 shadow-xl border-t-4 border-bordo flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+                <div
+                    class="w-12 h-12 sm:w-14 sm:h-14 bg-bordo-soft rounded-2xl flex items-center justify-center text-bordo text-xl sm:text-2xl font-bold flex-shrink-0">
+                    <i class="fa-solid fa-cross text-dourado"></i>
+                </div>
+                <div>
+                    <h2 class="font-heading font-black text-2xl sm:text-3xl text-bordo">Valores</h2>
+                    <p class="text-xs sm:text-sm text-gray-600 font-medium">Princípios cristãos e compromisso cívico</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div
+                class="bg-white rounded-2xl p-5 sm:p-6 shadow-xl border-t-4 border-dourado flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+                <div
+                    class="w-12 h-12 sm:w-14 sm:h-14 bg-dourado-soft rounded-2xl flex items-center justify-center text-dourado-dark text-xl sm:text-2xl font-bold flex-shrink-0">
+                    <i class="fa-solid fa-campground text-bordo"></i>
+                </div>
+                <div>
+                    <h2 class="font-heading font-black text-2xl sm:text-3xl text-escuro">Prática</h2>
+                    <p class="text-xs sm:text-sm text-gray-600 font-medium">Atividades ao ar livre e acampamentos</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção Quem Somos -->
+    <section id="sobre" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+            <!-- Imagem e Composição Visual -->
+            <div class="lg:col-span-5 relative order-2 lg:order-1">
+                <div
+                    class="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 w-full h-full border-4 border-dourado rounded-3xl z-0">
+                </div>
+                <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&q=80&w=800"
+                    alt="Atividade Escoteira em Equipe"
+                    class="relative z-10 rounded-3xl shadow-2xl object-cover w-full h-[320px] sm:h-[420px]">
+
+                <!-- Card de Citação Flutuante -->
+                <div
+                    class="absolute -bottom-5 -right-2 sm:-right-5 z-20 bg-bordo text-white p-4 sm:p-6 rounded-2xl shadow-xl max-w-[220px] sm:max-w-[260px] border border-dourado/30">
+                    <i class="fa-solid fa-quote-left text-dourado text-2xl sm:text-3xl block mb-1"></i>
+                    <p class="text-xs sm:text-sm font-semibold leading-snug italic">"Sempre Alerta para servir a Deus, à
+                        pátria e ao próximo."</p>
+                </div>
+            </div>
+
+            <!-- Texto Institucional -->
+            <div class="lg:col-span-7 space-y-5 sm:space-y-6 order-1 lg:order-2">
+                <div
+                    class="inline-flex items-center gap-2 text-bordo font-heading font-bold text-xs sm:text-sm tracking-widest uppercase">
+                    <span class="w-8 h-0.5 bg-dourado"></span>
+                    <span>Nossa Identidade e Propósito</span>
+                </div>
+
+                <h2 class="font-heading font-extrabold text-2xl sm:text-4xl text-escuro leading-tight">
+                    Construindo um futuro melhor através do <span
+                        class="text-bordo underline decoration-dourado decoration-4">Protagonismo Juvenil</span>
+                </h2>
+
+                <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
+                    No <strong>Grupo Escoteiro Leão de Judá</strong>, acreditamos firmemente que o jovem deve ser o
+                    verdadeiro protagonista da sua própria vida. Há 15 anos em Diadema/SP, atuamos com paixão na
+                    formação moral, intelectual e cidadã de crianças e adolescentes.
+                </p>
+
+                <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
+                    Unimos a consagrada <strong class="text-bordo">Excelência Técnica Escoteira</strong> (atividades de
+                    campo, nós, orientação, acampamentos e vida em equipe) aos <strong class="text-bordo">Valores
+                        Cristãos da Promessa</strong>. Essa combinação proporciona desenvolvimento integral do caráter e
+                    consciência social.
+                </p>
+
+                <!-- Pilares com Ícones -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                    <div class="p-4 bg-white rounded-xl shadow-sm border border-gray-200 flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-dourado text-xl mt-0.5 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="font-heading font-bold text-escuro text-sm">Autodesenvolvimento</h3>
+                            <p class="text-xs text-gray-600 mt-0.5">Estímulo constante à autonomia e liderança
+                                consciente.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white rounded-xl shadow-sm border border-gray-200 flex items-start gap-3">
+                        <i class="fa-solid fa-circle-check text-dourado text-xl mt-0.5 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="font-heading font-bold text-escuro text-sm">Valores Cristãos</h3>
+                            <p class="text-xs text-gray-600 mt-0.5">Respeito, solidariedade e fé como alicerce ético.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <a href="#ramos"
+                        class="inline-flex items-center gap-2 text-bordo font-heading font-bold hover:text-dourado transition text-sm sm:text-base">
+                        <span>Conheça os Ramos por Faixa Etária</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção Ramos Escoteiros (Faixas Etárias) -->
+    <section id="ramos" class="py-16 sm:py-24 bg-white border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <div
+                    class="inline-flex items-center gap-2 text-bordo font-heading font-bold text-xs sm:text-sm tracking-widest uppercase mb-2">
+                    <span class="w-6 h-0.5 bg-dourado"></span>
+                    <span>Etapas de Desenvolvimento</span>
+                    <span class="w-6 h-0.5 bg-dourado"></span>
+                </div>
+                <h2 class="font-heading font-black text-2xl sm:text-4xl text-escuro">
+                    Os Ramos do Escotismo
+                </h2>
+                <p class="text-gray-600 mt-3 text-sm sm:text-base">
+                    Atendemos crianças e jovens dos 6,5 aos 21 anos em programas pedagógicos adaptados para cada fase de
+                    crescimento.
+                </p>
+            </div>
+
+            <!-- Grid com Cards dos Ramos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Card Ramo Lobinho -->
+                <div
+                    class="bg-palha rounded-2xl p-6 border-2 border-transparent hover:border-amber-500 transition-all duration-300 shadow-md hover:shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div
+                                class="w-12 h-12 bg-amber-500 text-white rounded-xl flex items-center justify-center text-2xl font-bold shadow-md">
+                                <i class="fa-solid fa-paw"></i>
+                            </div>
+                            <span
+                                class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-1 rounded-full border border-amber-300">
+                                6.5 a 10 anos
+                            </span>
+                        </div>
+                        <h3
+                            class="font-heading font-extrabold text-xl text-escuro mb-2 group-hover:text-amber-600 transition">
+                            Ramo Lobinho</h3>
+                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+                            Inspirado em "O Livro da Jângal". O aprendizado ocorre por meio de jogos, fantasia e
+                            convivência em alcateia.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-200">
+                        <span class="text-xs font-bold text-amber-700 block mb-1">Lema: "Melhor Possível"</span>
+                        <div class="text-[11px] font-semibold text-gray-500 flex items-center justify-between">
+                            <span>Foco: Socialização & Brincadeiras</span>
+                            <i class="fa-solid fa-chevron-right text-amber-500"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Ramo Escoteiro -->
+                <div
+                    class="bg-palha rounded-2xl p-6 border-2 border-transparent hover:border-emerald-600 transition-all duration-300 shadow-md hover:shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div
+                                class="w-12 h-12 bg-emerald-600 text-white rounded-xl flex items-center justify-center text-2xl font-bold shadow-md">
+                                <i class="fa-solid fa-compass"></i>
+                            </div>
+                            <span
+                                class="bg-emerald-100 text-emerald-800 text-[11px] font-bold px-2.5 py-1 rounded-full border border-emerald-300">
+                                11 a 14 anos
+                            </span>
+                        </div>
+                        <h3
+                            class="font-heading font-extrabold text-xl text-escuro mb-2 group-hover:text-emerald-700 transition">
+                            Ramo Escoteiro</h3>
+                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+                            Atividades na natureza, trabalho em patrulhas, acampamentos, construções e nós.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-200">
+                        <span class="text-xs font-bold text-emerald-700 block mb-1">Lema: "Sempre Alerta"</span>
+                        <div class="text-[11px] font-semibold text-gray-500 flex items-center justify-between">
+                            <span>Foco: Autonomia & Aventura</span>
+                            <i class="fa-solid fa-chevron-right text-emerald-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Ramo Sênior -->
+                <div
+                    class="bg-palha rounded-2xl p-6 border-2 border-transparent hover:border-bordo transition-all duration-300 shadow-md hover:shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div
+                                class="w-12 h-12 bg-bordo text-white rounded-xl flex items-center justify-center text-2xl font-bold shadow-md">
+                                <i class="fa-solid fa-mountain text-dourado"></i>
+                            </div>
+                            <span
+                                class="bg-bordo-soft text-bordo text-[11px] font-bold px-2.5 py-1 rounded-full border border-bordo/20">
+                                15 a 17 anos
+                            </span>
+                        </div>
+                        <h3
+                            class="font-heading font-extrabold text-xl text-escuro mb-2 group-hover:text-bordo transition">
+                            Ramo Sênior</h3>
+                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+                            Superação de grandes desafios, jornadas de exploração, liderança e autoconhecimento.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-200">
+                        <span class="text-xs font-bold text-bordo block mb-1">Lema: "Sempre Alerta"</span>
+                        <div class="text-[11px] font-semibold text-gray-500 flex items-center justify-between">
+                            <span>Foco: Desafios & Liderança</span>
+                            <i class="fa-solid fa-chevron-right text-bordo"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Ramo Pioneiro -->
+                <div
+                    class="bg-palha rounded-2xl p-6 border-2 border-transparent hover:border-red-700 transition-all duration-300 shadow-md hover:shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div
+                                class="w-12 h-12 bg-red-700 text-white rounded-xl flex items-center justify-center text-2xl font-bold shadow-md">
+                                <i class="fa-solid fa-hand-holding-heart"></i>
+                            </div>
+                            <span
+                                class="bg-red-100 text-red-800 text-[11px] font-bold px-2.5 py-1 rounded-full border border-red-300">
+                                18 a 21 anos
+                            </span>
+                        </div>
+                        <h3
+                            class="font-heading font-extrabold text-xl text-escuro mb-2 group-hover:text-red-700 transition">
+                            Ramo Pioneiro</h3>
+                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+                            Serviço à comunidade, elaboração de projetos de vida e transição consciente para a fase
+                            adulta.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-200">
+                        <span class="text-xs font-bold text-red-700 block mb-1">Lema: "Servir"</span>
+                        <div class="text-[11px] font-semibold text-gray-500 flex items-center justify-between">
+                            <span>Foco: Engajamento Social</span>
+                            <i class="fa-solid fa-chevron-right text-red-700"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção Nossos Valores (Parallax) -->
+    <section id="valores" class="parallax-valores py-20 sm:py-28 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <div
+                    class="inline-flex items-center gap-2 text-dourado font-heading font-bold text-xs sm:text-sm tracking-widest uppercase mb-2">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Princípios Inegociáveis</span>
+                </div>
+                <h2 class="font-heading font-black text-2xl sm:text-4xl lg:text-5xl">
+                    Excelência Técnica & Fé
+                </h2>
+                <p class="text-gray-200 mt-3 text-sm sm:text-base max-w-2xl mx-auto">
+                    A Promessa Escoteira é o compromisso de honra que guia nossas ações diárias no grupo e em família.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+
+                <!-- Pilar 1 -->
+                <div
+                    class="bg-black/60 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-dourado/30 hover:border-dourado transition duration-300 hover:shadow-gold-glow">
+                    <div
+                        class="w-14 h-14 bg-dourado/20 text-dourado rounded-2xl flex items-center justify-center text-2xl mb-5 border border-dourado/40">
+                        <i class="fa-solid fa-cross"></i>
+                    </div>
+                    <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-dourado mb-3">Valores Cristãos</h3>
+                    <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                        Infundimos virtudes como verdade, fraternidade, respeito, dever para com Deus e amor ao próximo
+                        como pilares morais do caráter.
+                    </p>
+                </div>
+
+                <!-- Pilar 2 -->
+                <div
+                    class="bg-black/60 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-dourado/30 hover:border-dourado transition duration-300 hover:shadow-gold-glow">
+                    <div
+                        class="w-14 h-14 bg-dourado/20 text-dourado rounded-2xl flex items-center justify-center text-2xl mb-5 border border-dourado/40">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-dourado mb-3">Excelência Técnica
+                    </h3>
+                    <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                        Aplicação do Método Escoteiro: técnica de pioneiria, primeiros socorros, nós, navegação por
+                        bússola e acampamentos.
+                    </p>
+                </div>
+
+                <!-- Pilar 3 -->
+                <div
+                    class="bg-black/60 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-dourado/30 hover:border-dourado transition duration-300 hover:shadow-gold-glow">
+                    <div
+                        class="w-14 h-14 bg-dourado/20 text-dourado rounded-2xl flex items-center justify-center text-2xl mb-5 border border-dourado/40">
+                        <i class="fa-solid fa-person-hiking"></i>
+                    </div>
+                    <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-dourado mb-3">Aprender Fazendo</h3>
+                    <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                        Metodologia prática que estimula autoconfiança, superação de obstáculos e protagonismo real
+                        diante da sociedade.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção Atividades e Encontros -->
+    <section id="atividades" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div
+            class="bg-bordo rounded-3xl p-6 sm:p-12 text-white shadow-2xl relative overflow-hidden border border-dourado/30">
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+
+                <div class="lg:col-span-7 space-y-5">
+                    <div
+                        class="inline-flex items-center gap-2 bg-dourado text-escuro font-bold text-xs uppercase px-3 py-1 rounded-full">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>Encontros Presenciais</span>
+                    </div>
+
+                    <h2 class="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-white leading-tight">
+                        Reuniões Todos os <span class="text-dourado underline decoration-white">Sábados</span>
+                    </h2>
+
+                    <p class="text-gray-200 text-sm sm:text-base leading-relaxed">
+                        Oferecemos um ambiente dinâmico, alegre e seguro para que o seu filho desenvolva novas
+                        habilidades e faça amizades para a vida inteira.
+                    </p>
+
+                    <!-- Detalhes de Horário e Endereço -->
+                    <div class="bg-bordo-dark/90 p-5 rounded-2xl border border-dourado/40 space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 bg-dourado text-bordo font-bold rounded-xl flex items-center justify-center text-xl flex-shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3
+                                    class="font-heading font-bold text-xs sm:text-sm text-dourado uppercase tracking-wider">
+                                    Horário Semanal</h3>
+                                <p class="text-white text-lg sm:text-2xl font-extrabold">Das 09:00h às 11:30h</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 pt-3 border-t border-white/10">
+                            <div
+                                class="w-12 h-12 bg-white/10 text-dourado rounded-xl flex items-center justify-center text-xl flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h3
+                                    class="font-heading font-bold text-xs sm:text-sm text-gray-300 uppercase tracking-wider">
+                                    Local da Sede</h3>
+                                <p class="text-white font-semibold text-sm sm:text-base">Avenida Alda, 801 - Centro,
+                                    Diadema - SP</p>
+                                <p class="text-xs text-dourado">CEP 09910-170</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Interativo para Agendar Visita -->
+                <div
+                    class="lg:col-span-5 bg-white text-escuro rounded-2xl p-6 sm:p-8 shadow-2xl text-center space-y-5 border border-gray-100">
+                    <div
+                        class="w-16 h-16 bg-bordo-soft text-bordo rounded-2xl flex items-center justify-center mx-auto text-2xl font-bold">
+                        <i class="fa-solid fa-door-open text-dourado"></i>
+                    </div>
+
+                    <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-bordo">Venha Conhecer uma Atividade!
+                    </h3>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                        Pais e responsáveis são muito bem-vindos para acompanhar um sábado de atividades experimentais e
+                        conversar com nossa chefia escoteira.
+                    </p>
+
+                    <a href="https://wa.me/5511996467356?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20Grupo%20Escoteiro%20Le%C3%A3o%20de%20Jud%C3%A1."
+                        target="_blank" rel="noopener noreferrer"
+                        class="w-full bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-heading font-bold py-3.5 px-4 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 min-h-[48px]">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Falar no WhatsApp da Secretaria</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção FAQ -->
+    <section class="py-16 sm:py-20 bg-palha border-t border-gray-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="font-heading font-black text-2xl sm:text-4xl text-escuro">
+                    Perguntas Frequentes
+                </h2>
+                <p class="text-gray-600 mt-2 text-xs sm:text-sm">Respostas para as dúvidas mais comuns dos pais</p>
+            </div>
+
+            <div class="space-y-3.5" id="faqAccordion">
+
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <button onclick="toggleFaq(1)"
+                        class="w-full text-left p-4 sm:p-5 font-heading font-bold text-escuro text-sm sm:text-base flex justify-between items-center hover:text-bordo transition min-h-[52px]">
+                        <span class="pr-2">Qual é a idade mínima para ingressar no grupo?</span>
+                        <i class="fa-solid fa-chevron-down text-dourado transition-transform duration-300 flex-shrink-0"
+                            id="faqIcon-1"></i>
+                    </button>
+                    <div id="faqAnswer-1"
+                        class="hidden p-4 sm:p-5 pt-0 text-gray-600 text-xs sm:text-sm leading-relaxed border-t border-gray-100">
+                        Acolhemos crianças a partir dos 6 anos e meio no Ramo Lobinho. O movimento escoteiro acompanha o
+                        jovem até os 21 anos incompletos no Ramo Pioneiro.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <button onclick="toggleFaq(2)"
+                        class="w-full text-left p-4 sm:p-5 font-heading font-bold text-escuro text-sm sm:text-base flex justify-between items-center hover:text-bordo transition min-h-[52px]">
+                        <span class="pr-2">É necessário ter experiência anterior?</span>
+                        <i class="fa-solid fa-chevron-down text-dourado transition-transform duration-300 flex-shrink-0"
+                            id="faqIcon-2"></i>
+                    </button>
+                    <div id="faqAnswer-2"
+                        class="hidden p-4 sm:p-5 pt-0 text-gray-600 text-xs sm:text-sm leading-relaxed border-t border-gray-100">
+                        Não! Qualquer criança ou jovem pode ingressar em qualquer momento do ano. Nossos chefes orientam
+                        desde o primeiro dia todo o aprendizado da Promessa, canções e técnicas escoteiras.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <button onclick="toggleFaq(3)"
+                        class="w-full text-left p-4 sm:p-5 font-heading font-bold text-escuro text-sm sm:text-base flex justify-between items-center hover:text-bordo transition min-h-[52px]">
+                        <span class="pr-2">Como faço para inscrever meu filho?</span>
+                        <i class="fa-solid fa-chevron-down text-dourado transition-transform duration-300 flex-shrink-0"
+                            id="faqIcon-3"></i>
+                    </button>
+                    <div id="faqAnswer-3"
+                        class="hidden p-4 sm:p-5 pt-0 text-gray-600 text-xs sm:text-sm leading-relaxed border-t border-gray-100">
+                        Você pode preencher o formulário online disponível no botão "INSCREVA-SE" deste site ou
+                        comparecer pessoalmente à nossa sede em um sábado, às 09h.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Parallax Final CTA -->
+    <section class="parallax-cta py-20 sm:py-28 text-center text-white px-4">
+        <div class="max-w-3xl mx-auto space-y-6">
+            <div
+                class="w-16 h-16 bg-dourado/20 rounded-full flex items-center justify-center mx-auto border border-dourado/50">
+                <i class="fa-solid fa-shield-cat text-3xl text-dourado"></i>
+            </div>
+
+            <h2 class="font-heading font-black text-3xl sm:text-5xl leading-tight">
+                Venha Fazer Parte do Nosso Grupo
+            </h2>
+
+            <p class="text-gray-200 text-sm sm:text-lg max-w-2xl mx-auto">
+                Inscreva seu filho ou venha atuar como adulto voluntário no Grupo Escoteiro Leão de Judá.
+            </p>
+
+            <div class="pt-2">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNYgY6lo8b4UYHLokWuCgg0rspbuupwT9mJbqn7L3fC3sBqA/closedf"
+                    target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-3 bg-dourado hover:bg-dourado-light active:bg-dourado-dark text-escuro font-heading font-black text-base sm:text-xl px-8 sm:px-10 py-4 sm:py-5 rounded-2xl shadow-2xl transition transform hover:scale-105 border border-white/30">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Abrir Formulário de Inscrição</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato e Localização -->
+    <section id="contato" class="py-16 sm:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+                <!-- Informações de Contato -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <div
+                            class="inline-flex items-center gap-2 text-bordo font-heading font-bold text-xs tracking-widest uppercase mb-1">
+                            <span class="w-6 h-0.5 bg-dourado"></span>
+                            <span>Canais de Atendimento</span>
+                        </div>
+                        <h2 class="font-heading font-black text-2xl sm:text-3xl text-escuro">Fale com a Secretaria</h2>
+                        <p class="text-gray-600 mt-1 text-xs sm:text-sm">Estamos prontos para atende-lo e tirar suas
+                            dúvidas.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Telefone -->
+                        <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-palha border border-gray-100">
+                            <div
+                                class="w-10 h-10 bg-bordo-soft text-bordo rounded-xl flex items-center justify-center text-lg flex-shrink-0">
+                                <i class="fa-solid fa-phone text-dourado"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-bold text-escuro text-sm">Telefone / WhatsApp</h3>
+                                <p class="text-gray-700 font-semibold text-sm">(11) 99646-7356</p>
+                                <a href="https://wa.me/5511996467356" target="_blank"
+                                    class="text-xs text-bordo hover:underline font-bold mt-0.5 inline-block">Conversar
+                                    pelo WhatsApp</a>
+                            </div>
+                        </div>
+
+                        <!-- E-mail -->
+                        <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-palha border border-gray-100">
+                            <div
+                                class="w-10 h-10 bg-bordo-soft text-bordo rounded-xl flex items-center justify-center text-lg flex-shrink-0">
+                                <i class="fa-solid fa-envelope text-dourado"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-bold text-escuro text-sm">E-mail Oficial</h3>
+                                <p class="text-gray-700 font-medium text-xs sm:text-sm break-all">
+                                    leaodejuda.secretaria2@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <!-- Endereço -->
+                        <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-palha border border-gray-100">
+                            <div
+                                class="w-10 h-10 bg-bordo-soft text-bordo rounded-xl flex items-center justify-center text-lg flex-shrink-0">
+                                <i class="fa-solid fa-location-dot text-dourado"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-heading font-bold text-escuro text-sm">Endereço da Sede</h3>
+                                <p class="text-gray-700 text-xs sm:text-sm">Avenida Alda, 801 - Centro</p>
+                                <p class="text-gray-700 text-xs sm:text-sm">Diadema - SP, CEP 09910-170</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Redes Sociais -->
+                    <div class="pt-2">
+                        <h3 class="font-heading font-bold text-xs uppercase tracking-wider text-gray-500 mb-2.5">Nossas
+                            Redes Sociais</h3>
+                        <div class="flex gap-3">
+                            <a href="https://www.instagram.com/ge_leaodejuda/" target="_blank" rel="noopener noreferrer"
+                                class="w-11 h-11 bg-bordo text-white rounded-xl flex items-center justify-center hover:bg-dourado hover:text-escuro transition shadow-md"
+                                aria-label="Acessar Instagram do Grupo">
+                                <i class="fa-brands fa-instagram text-xl"></i>
+                            </a>
+                            <a href="https://wa.me/5511996467356" target="_blank" rel="noopener noreferrer"
+                                class="w-11 h-11 bg-emerald-600 text-white rounded-xl flex items-center justify-center hover:bg-emerald-700 transition shadow-md"
+                                aria-label="Acessar WhatsApp do Grupo">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mapa Incorporado Responsivo -->
+                <div class="lg:col-span-7">
+                    <div
+                        class="bg-palha p-3 sm:p-4 rounded-3xl border border-gray-200 shadow-md h-full flex flex-col justify-between">
+                        <div class="w-full h-[300px] sm:h-[380px] rounded-2xl overflow-hidden border border-gray-300">
+                            <iframe title="Mapa da Sede do Grupo Escoteiro Leão de Judá"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.256421319232!2d-46.6267803!3d-23.6846995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce445749f99f35%3A0x6b8dd8f9bf68eb1a!2sAv.%20Alda%2C%20801%20-%20Centro%2C%20Diadema%20-%20SP%2C%2009910-170!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+                                class="w-full h-full border-0" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <div class="text-center pt-2.5 text-[11px] sm:text-xs text-gray-500 font-medium">
+                            <i class="fa-solid fa-location-crosshairs text-dourado"></i> Localização central em Diadema
+                            - SP
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-escuro text-white pt-10 pb-8 border-t-4 border-dourado">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-white/10">
+
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-dourado rounded-xl flex items-center justify-center text-bordo font-bold">
+                        <i class="fa-solid fa-shield-cat text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-heading font-extrabold text-base sm:text-lg block">LEÃO DE JUDÁ</span>
+                        <span class="text-[11px] text-dourado block">Grupo Escoteiro em Diadema/SP</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs text-gray-400 font-medium">
+                    <a href="#inicio" class="hover:text-dourado transition">Início</a>
+                    <a href="#sobre" class="hover:text-dourado transition">Quem Somos</a>
+                    <a href="#ramos" class="hover:text-dourado transition">Ramos</a>
+                    <a href="#valores" class="hover:text-dourado transition">Valores</a>
+                    <a href="#atividades" class="hover:text-dourado transition">Encontros</a>
+                    <a href="#contato" class="hover:text-dourado transition">Contato</a>
+                </div>
+
+                <div class="text-xs text-dourado font-bold tracking-wider uppercase">
+                    <span>Sempre Alerta!</span>
+                </div>
+
+            </div>
+
+            <div class="pt-6 text-center text-[11px] sm:text-xs text-gray-500">
+                <p>&copy; 2026 Grupo Escoteiro Leão de Judá. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript para Interatividade e Acessibilidade -->
+    <script>
+        // Alternar visualização do menu mobile
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            menu.classList.toggle('hidden');
+
+            if (menu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars text-2xl';
+            } else {
+                icon.className = 'fa-solid fa-xmark text-2xl';
+            }
+        }
+
+        // Alternar resposta do FAQ
+        function toggleFaq(id) {
+            const answer = document.getElementById(`faqAnswer-${id}`);
+            const icon = document.getElementById(`faqIcon-${id}`);
+
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                answer.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Controle de Acessibilidade de Tamanho de Fonte
+        let currentFontSizeLevel = 0;
+        const bodyElement = document.getElementById('bodyElement');
+
+        function toggleFontSize(direction) {
+            if (direction === 1 && currentFontSizeLevel < 3) {
+                currentFontSizeLevel++;
+            } else if (direction === -1 && currentFontSizeLevel > -1) {
+                currentFontSizeLevel--;
+            }
+
+            switch (currentFontSizeLevel) {
+                case -1:
+                    bodyElement.style.fontSize = '90%';
+                    break;
+                case 0:
+                    bodyElement.style.fontSize = '100%';
+                    break;
+                case 1:
+                    bodyElement.style.fontSize = '110%';
+                    break;
+                case 2:
+                    bodyElement.style.fontSize = '120%';
+                    break;
+                case 3:
+                    bodyElement.style.fontSize = '130%';
+                    break;
+            }
+        }
+
+        function resetFontSize() {
+            currentFontSizeLevel = 0;
+            bodyElement.style.fontSize = '100%';
+        }
+
+        // Alternar modo de Alto Contraste
+        function toggleHighContrast() {
+            document.body.classList.toggle('high-contrast');
+        }
+    </script>
+</body>
+
+</html>
