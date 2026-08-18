@@ -456,7 +456,7 @@
             <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
                 <div class="inline-flex items-center gap-2 bg-black/50 border border-dourado/70 px-4 py-2 rounded-full text-dourado text-xs sm:text-sm font-semibold tracking-wider uppercase backdrop-blur-md shadow-gold-glow animate-float">
                     <i class="fa-solid fa-award text-dourado-light text-base"></i>
-                    <span class="font-heading">15 Anos Formando Jovens Protagonistas</span>
+                    <span class="font-heading"><span class="idade-grupo">15</span> Anos Formando Jovens Protagonistas</span>
                 </div>
                 <div class="inline-flex items-center gap-2 bg-gradient-to-r from-dourado/30 to-amber-500/20 border border-dourado px-4 py-2 rounded-full text-dourado-light text-xs sm:text-sm font-bold tracking-wider uppercase backdrop-blur-md shadow-gold-glow animate-float-delayed">
                     <i class="fa-solid fa-medal text-dourado text-base"></i>
@@ -532,7 +532,7 @@
                     <i class="fa-solid fa-award text-dourado"></i>
                 </div>
                 <div>
-                    <h2 class="font-heading font-black text-2xl sm:text-3xl text-bordo">15 Anos</h2>
+                    <h2 class="font-heading font-black text-2xl sm:text-3xl text-bordo"><span class="idade-grupo">15</span> Anos</h2>
                     <p class="text-xs sm:text-sm text-gray-600 font-medium">História e tradição sólida na comunidade</p>
                 </div>
             </div>
@@ -620,7 +620,7 @@
 
                 <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
                     No <strong>Grupo Escoteiro Leão de Judá</strong>, acreditamos firmemente que o jovem deve ser o
-                    verdadeiro protagonista da sua própria vida. Reconhecido com o selo de <strong>Grupo Padrão Ouro</strong> pela União dos Escoteiros do Brasil (UEB), há 15 anos em Diadema/SP atuamos com dedicação e excelência na formação moral, intelectual e cidadã de crianças e adolescentes.
+                    verdadeiro protagonista da sua própria vida. Reconhecido com o selo de <strong>Grupo Padrão Ouro</strong> pela União dos Escoteiros do Brasil (UEB), há <span class="idade-grupo">15</span> anos em Diadema/SP atuamos com dedicação e excelência na formação moral, intelectual e cidadã de crianças e adolescentes.
                 </p>
 
                 <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
@@ -1175,7 +1175,8 @@
                         class="w-12 h-12 rounded-xl border border-dourado/50 object-cover p-0.5 bg-bordo-dark">
                     <div>
                         <span class="font-heading font-extrabold text-base sm:text-lg block tracking-wide text-white">LEÃO DE JUDÁ</span>
-                        <span class="text-[11px] text-dourado block font-semibold">Grupo Escoteiro Padrão Ouro • Diadema/SP • 15 Anos</span>
+                        <span class="text-[11px] text-dourado block font-semibold">Grupo Escoteiro Padrão Ouro • Diadema/SP • <span class="idade-grupo">15</span> Anos</span>
+                        <span class="text-[11px] text-gray-400 block mt-0.5">Um ministério da <a href="https://imeldiadema.org.br/" target="_blank" rel="noopener noreferrer" class="text-dourado-light hover:underline transition-colors font-medium">IEMEL Diadema</a></span>
                     </div>
                 </div>
 
@@ -1238,9 +1239,36 @@
             }
         }
 
-        // Controle de Acessibilidade de Tamanho de Fonte
+        // Data de fundação do grupo (pode ser alterada aqui conforme necessário)
+        const DATA_FUNDACAO_GRUPO = "2011-10-10";
+
+        // Calcular e atualizar automaticamente a idade do grupo em todo o site
+        function atualizarIdadeGrupo() {
+            const dataFundacao = new Date(DATA_FUNDACAO_GRUPO + "T00:00:00");
+            const hoje = new Date();
+            let idade = hoje.getFullYear() - dataFundacao.getFullYear();
+            const mesDiff = hoje.getMonth() - dataFundacao.getMonth();
+            const diaDiff = hoje.getDate() - dataFundacao.getDate();
+            
+            if (mesDiff < 0 || (mesDiff === 0 && diaDiff < 0)) {
+                idade--;
+            }
+
+            // Atualiza todos os elementos com a classe idade-grupo
+            document.querySelectorAll('.idade-grupo').forEach(el => {
+                el.textContent = idade;
+            });
+
+            // Atualiza o título do site dinamicamente
+            document.title = document.title.replace(/\d+\sAnos/, `${idade} Anos`);
+        }
+
+        // Executar a atualização da idade do grupo
+        document.addEventListener('DOMContentLoaded', atualizarIdadeGrupo);
+
+        // Controle de Acessibilidade de Tamanho de Fonte (Ajusta o root html para funcionar com Tailwind rem)
         let currentFontSizeLevel = 0;
-        const bodyElement = document.getElementById('bodyElement');
+        const htmlElement = document.documentElement;
 
         function toggleFontSize(direction) {
             if (direction === 1 && currentFontSizeLevel < 3) {
@@ -1251,26 +1279,26 @@
 
             switch (currentFontSizeLevel) {
                 case -1:
-                    bodyElement.style.fontSize = '90%';
+                    htmlElement.style.fontSize = '90%';
                     break;
                 case 0:
-                    bodyElement.style.fontSize = '100%';
+                    htmlElement.style.fontSize = '100%';
                     break;
                 case 1:
-                    bodyElement.style.fontSize = '108%';
+                    htmlElement.style.fontSize = '108%';
                     break;
                 case 2:
-                    bodyElement.style.fontSize = '116%';
+                    htmlElement.style.fontSize = '116%';
                     break;
                 case 3:
-                    bodyElement.style.fontSize = '125%';
+                    htmlElement.style.fontSize = '125%';
                     break;
             }
         }
 
         function resetFontSize() {
             currentFontSizeLevel = 0;
-            bodyElement.style.fontSize = '100%';
+            htmlElement.style.fontSize = '100%';
         }
 
         // Alternar Alto Contraste
