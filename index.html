@@ -9,15 +9,18 @@
         content="Grupo Escoteiro Leão de Judá em Diadema/SP. Formando jovens protagonistas através da Excelência Técnica Escoteira e dos valores cristãos da Promessa. Reuniões aos sábados das 09h às 11:30h.">
     <meta name="theme-color" content="#8A151B">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -29,33 +32,48 @@
                     colors: {
                         bordo: {
                             DEFAULT: '#8A151B',
-                            dark: '#5C0D11',
-                            hover: '#A81F26',
-                            soft: '#FBF2F2',
+                            dark: '#520B0F',
+                            deep: '#3A0609',
+                            hover: '#A31C23',
+                            soft: '#FDF4F4',
                             light: '#C2232B'
                         },
                         dourado: {
                             DEFAULT: '#D3A84B',
                             dark: '#B0862F',
-                            light: '#E2C175',
-                            soft: '#FCF8EE'
+                            light: '#F3D58C',
+                            soft: '#FDF9EE',
+                            glow: 'rgba(211, 168, 75, 0.45)'
                         },
                         escuro: {
-                            DEFAULT: '#141414',
-                            card: '#1F1F1F'
+                            DEFAULT: '#0F0F11',
+                            card: '#18181B',
+                            light: '#27272A'
                         },
                         palha: {
-                            DEFAULT: '#FAF7F2',
-                            dark: '#F0EAE1'
+                            DEFAULT: '#F9F6F0',
+                            dark: '#EFE9DE'
                         }
                     },
                     fontFamily: {
                         heading: ['Montserrat', 'sans-serif'],
-                        body: ['Open Sans', 'sans-serif']
+                        body: ['"Plus Jakarta Sans"', 'sans-serif']
                     },
                     boxShadow: {
-                        'card-hover': '0 20px 30px -10px rgba(138, 21, 27, 0.15)',
-                        'gold-glow': '0 0 20px rgba(211, 168, 75, 0.35)'
+                        'card-hover': '0 20px 40px -15px rgba(138, 21, 27, 0.22)',
+                        'gold-glow': '0 0 25px rgba(211, 168, 75, 0.4)',
+                        'gold-glow-lg': '0 0 45px rgba(211, 168, 75, 0.55)',
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
                     }
                 }
             }
@@ -64,16 +82,8 @@
 
     <style>
         /* Parallax Background Layers */
-        .parallax-hero {
-            background-image: linear-gradient(to bottom, rgba(138, 21, 27, 0.88), rgba(20, 20, 20, 0.92)), url('https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&q=80&w=1920');
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
         .parallax-valores {
-            background-image: linear-gradient(to bottom, rgba(20, 20, 20, 0.88), rgba(138, 21, 27, 0.92)), url('https://images.unsplash.com/photo-1475483768296-6163e08872a1?auto=format&fit=crop&q=80&w=1920');
+            background-image: linear-gradient(135deg, rgba(15, 15, 17, 0.93) 0%, rgba(82, 11, 15, 0.90) 50%, rgba(15, 15, 17, 0.95) 100%), url('https://images.unsplash.com/photo-1475483768296-6163e08872a1?auto=format&fit=crop&q=80&w=1920');
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
@@ -81,24 +91,69 @@
         }
 
         .parallax-cta {
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.82), rgba(138, 21, 27, 0.88)), url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=1920');
+            background-image: linear-gradient(135deg, rgba(15, 15, 17, 0.90) 0%, rgba(138, 21, 27, 0.88) 60%, rgba(82, 11, 15, 0.94) 100%), url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=1920');
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
         }
 
-        /* Fallback for touch screens (iOS / Android parallax performance) */
+        /* Fallback for mobile / touch screens */
         @media (max-width: 1024px) {
-
-            .parallax-hero,
             .parallax-valores,
             .parallax-cta {
                 background-attachment: scroll;
             }
         }
 
-        /* High Contrast Mode CSS Rules */
+        /* Glassmorphism & Header Styles */
+        .glass-nav {
+            background: rgba(82, 11, 15, 0.90);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(211, 168, 75, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .glass-nav.scrolled {
+            background: rgba(30, 4, 6, 0.96);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+            border-bottom-color: rgba(211, 168, 75, 0.4);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .glass-card-dark {
+            background: rgba(15, 15, 17, 0.75);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(211, 168, 75, 0.25);
+        }
+
+        /* Reveal on scroll animations */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal-on-scroll.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Scroll Progress Bar */
+        #scrollProgressBar {
+            transform-origin: 0% 50%;
+        }
+
+        /* High Contrast Mode */
         body.high-contrast {
             background-color: #000000 !important;
             color: #FFFFFF !important;
@@ -141,13 +196,25 @@
             outline: 2px solid #FFD700 !important;
         }
 
-        .glass-header {
-            background: rgba(138, 21, 27, 0.96);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
         }
 
-        /* Smooth touch scrolling */
+        ::-webkit-scrollbar-track {
+            background: #141414;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #8A151B;
+            border-radius: 5px;
+            border: 2px solid #141414;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D3A84B;
+        }
+
         html {
             -webkit-tap-highlight-color: transparent;
         }
@@ -158,26 +225,31 @@
     class="bg-palha text-escuro font-body transition-all duration-300 antialiased selection:bg-dourado selection:text-bordo-dark"
     id="bodyElement">
 
-    <!-- Barra Superior de Acessibilidade e Redes Sociais -->
-    <div class="bg-bordo-dark text-white text-xs py-2 px-3 sm:px-6 border-b border-dourado/30 relative z-50">
+    <!-- Barra de Progresso de Leitura Superior -->
+    <div id="scrollProgressBar"
+        class="fixed top-0 left-0 h-1 bg-gradient-to-r from-dourado via-dourado-light to-white w-0 z-50 transition-all duration-100 ease-out shadow-sm">
+    </div>
+
+    <!-- Barra Superior de Informações & Acessibilidade -->
+    <div class="bg-bordo-dark text-white text-xs py-2 px-3 sm:px-6 border-b border-dourado/20 relative z-50">
         <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
 
-            <!-- Horário e Local para visualização rápida em mobile -->
+            <!-- Horário e Local -->
             <div class="flex items-center gap-3 text-[11px] sm:text-xs">
-                <span class="flex items-center gap-1.5 font-medium">
+                <span class="flex items-center gap-1.5 font-semibold text-gray-200">
                     <i class="fa-solid fa-clock text-dourado"></i>
-                    <span>Sábados: 09h - 11:30h</span>
+                    <span>Sábados: 09h às 11:30h</span>
                 </span>
                 <span class="hidden sm:inline-block text-dourado/40">|</span>
-                <span class="hidden sm:flex items-center gap-1.5 font-medium">
+                <span class="hidden sm:flex items-center gap-1.5 font-medium text-gray-300">
                     <i class="fa-solid fa-location-dot text-dourado"></i>
-                    <span>Diadema - SP</span>
+                    <span>Av. Alda, 801 - Diadema/SP</span>
                 </span>
             </div>
 
-            <!-- Ferramentas de Acessibilidade & Redes -->
+            <!-- Acessibilidade & Redes -->
             <div class="flex items-center space-x-2 sm:space-x-3 text-xs">
-                <div class="flex items-center bg-black/20 rounded-lg p-0.5 border border-white/10">
+                <div class="flex items-center bg-black/30 rounded-lg p-0.5 border border-white/10">
                     <button onclick="toggleFontSize(1)" title="Aumentar Fonte"
                         class="hover:bg-dourado hover:text-escuro w-7 h-7 flex items-center justify-center rounded font-bold transition focus:outline-none"
                         aria-label="Aumentar tamanho do texto">A+</button>
@@ -190,7 +262,7 @@
                 </div>
 
                 <button onclick="toggleHighContrast()" title="Alto Contraste"
-                    class="bg-black/20 hover:bg-dourado hover:text-escuro px-2.5 py-1.5 rounded-lg border border-white/10 transition flex items-center gap-1 text-[11px] font-semibold focus:outline-none"
+                    class="bg-black/30 hover:bg-dourado hover:text-escuro px-2.5 py-1.5 rounded-lg border border-white/10 transition flex items-center gap-1 text-[11px] font-semibold focus:outline-none"
                     aria-label="Alternar Alto Contraste">
                     <i class="fa-solid fa-circle-half-stroke text-dourado"></i>
                     <span class="hidden xs:inline">Contraste</span>
@@ -198,15 +270,15 @@
 
                 <span class="text-dourado/40">|</span>
 
-                <div class="flex items-center space-x-1">
+                <div class="flex items-center space-x-1.5">
                     <a href="https://www.instagram.com/ge_leaodejuda/" target="_blank" rel="noopener noreferrer"
-                        class="hover:text-dourado w-7 h-7 flex items-center justify-center rounded-full hover:bg-white/10 transition"
-                        aria-label="Instagram Oficial">
+                        class="hover:text-dourado w-7 h-7 flex items-center justify-center rounded-lg hover:bg-white/10 transition"
+                        title="Instagram Oficial" aria-label="Instagram Oficial">
                         <i class="fa-brands fa-instagram text-sm"></i>
                     </a>
                     <a href="https://wa.me/5511996467356" target="_blank" rel="noopener noreferrer"
-                        class="hover:text-dourado w-7 h-7 flex items-center justify-center rounded-full hover:bg-white/10 transition"
-                        aria-label="WhatsApp Oficial">
+                        class="hover:text-dourado w-7 h-7 flex items-center justify-center rounded-lg hover:bg-white/10 transition text-emerald-400"
+                        title="WhatsApp da Secretaria" aria-label="WhatsApp Oficial">
                         <i class="fa-brands fa-whatsapp text-sm"></i>
                     </a>
                 </div>
@@ -216,62 +288,61 @@
     </div>
 
     <!-- Header / Navbar Principal -->
-    <header class="sticky top-0 z-40 glass-header shadow-md text-white transition-all">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
+    <header id="mainHeader" class="sticky top-0 z-40 glass-nav shadow-lg text-white">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4"
             aria-label="Navegação Principal">
 
-            <!-- Logo e Título -->
+            <!-- Logo e Título com Logo Redimensionado -->
             <a href="#inicio"
-                class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-dourado rounded-xl p-1 transition">
-                <div
-                    class="w-11 h-11 sm:w-12 sm:h-12 bg-dourado rounded-xl p-1 transform rotate-45 group-hover:rotate-0 transition-all duration-300 flex items-center justify-center shadow-lg border border-white/20 flex-shrink-0">
-                    <i
-                        class="fa-solid fa-shield-cat text-bordo text-xl sm:text-2xl -rotate-45 group-hover:rotate-0 transition-all duration-300"></i>
+                class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-dourado rounded-xl p-1 transition flex-shrink-0">
+                <div class="relative flex items-center justify-center">
+                    <img src="assets/logo.jpg" alt="Logo Grupo Escoteiro Leão de Judá"
+                        class="h-12 w-12 sm:h-14 sm:w-14 object-cover rounded-xl shadow-lg border-2 border-dourado/50 group-hover:scale-105 group-hover:border-dourado transition-all duration-300 bg-bordo-dark">
+                    <span class="absolute -bottom-1 -right-1 flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-dourado opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-dourado"></span>
+                    </span>
                 </div>
                 <div class="flex flex-col">
                     <span
-                        class="font-heading font-black text-lg sm:text-2xl tracking-wide text-white block leading-none">LEÃO
+                        class="font-heading font-black text-lg sm:text-xl tracking-wide text-white block leading-tight group-hover:text-dourado-light transition-colors">LEÃO
                         DE JUDÁ</span>
                     <span
-                        class="text-dourado text-[10px] sm:text-xs font-bold tracking-widest uppercase block mt-1">Grupo
+                        class="text-dourado text-[10px] sm:text-xs font-bold tracking-widest uppercase block mt-0.5">Grupo
                         Escoteiro • 15 Anos</span>
                 </div>
             </a>
 
-            <!-- Menu Desktop -->
-            <div
-                class="hidden lg:flex items-center space-x-7 font-heading font-semibold text-xs xl:text-sm tracking-wider">
+            <!-- Menu Desktop Refinado (Itens em Linha Única, Proporcionais e Elegantes) -->
+            <div class="hidden lg:flex items-center space-x-1 xl:space-x-2 font-heading font-semibold text-xs xl:text-sm">
                 <a href="#inicio"
-                    class="hover:text-dourado transition border-b-2 border-transparent hover:border-dourado py-1">INÍCIO</a>
+                    class="text-white/90 hover:text-dourado hover:bg-white/10 px-3 py-2 rounded-lg transition whitespace-nowrap">Início</a>
                 <a href="#sobre"
-                    class="hover:text-dourado transition border-b-2 border-transparent hover:border-dourado py-1">QUEM
-                    SOMOS</a>
+                    class="text-white/90 hover:text-dourado hover:bg-white/10 px-3 py-2 rounded-lg transition whitespace-nowrap">Quem Somos</a>
                 <a href="#ramos"
-                    class="hover:text-dourado transition border-b-2 border-transparent hover:border-dourado py-1">RAMOS
-                    ESCOTEIROS</a>
+                    class="text-white/90 hover:text-dourado hover:bg-white/10 px-3 py-2 rounded-lg transition whitespace-nowrap">Ramos Escoteiros</a>
                 <a href="#valores"
-                    class="hover:text-dourado transition border-b-2 border-transparent hover:border-dourado py-1">NOSSOS
-                    VALORES</a>
+                    class="text-white/90 hover:text-dourado hover:bg-white/10 px-3 py-2 rounded-lg transition whitespace-nowrap">Nossos Valores</a>
                 <a href="#atividades"
-                    class="hover:text-dourado transition border-b-2 border-transparent hover:border-dourado py-1">ENCONTROS</a>
+                    class="text-white/90 hover:text-dourado hover:bg-white/10 px-3 py-2 rounded-lg transition whitespace-nowrap">Encontros</a>
                 <a href="#contato"
-                    class="hover:text-dourado transition border-b-2 border-transparent hover:border-dourado py-1">CONTATO</a>
+                    class="text-white/90 hover:text-dourado hover:bg-white/10 px-3 py-2 rounded-lg transition whitespace-nowrap">Contato</a>
             </div>
 
             <!-- Botão de Inscrição CTA Navbar -->
-            <div class="hidden sm:flex items-center">
+            <div class="hidden sm:flex items-center flex-shrink-0">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNYgY6lo8b4UYHLokWuCgg0rspbuupwT9mJbqn7L3fC3sBqA/closedf"
                     target="_blank" rel="noopener noreferrer"
-                    class="bg-dourado hover:bg-dourado-light text-escuro font-heading font-bold text-xs xl:text-sm px-5 py-2.5 rounded-full transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-gold-glow flex items-center gap-2 border border-white/20">
+                    class="bg-gradient-to-r from-dourado to-dourado-light hover:from-dourado-light hover:to-dourado text-escuro font-heading font-extrabold text-xs xl:text-sm px-5 py-2.5 rounded-full transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-gold-glow flex items-center gap-2 border border-white/30 whitespace-nowrap">
                     <i class="fa-solid fa-user-plus text-xs"></i>
-                    <span>INSCREVA-SE</span>
+                    <span>Cadastre-se Agora</span>
                 </a>
             </div>
 
             <!-- Botão Mobile Hamburger -->
             <div class="lg:hidden flex items-center">
                 <button id="mobileMenuBtn" onclick="toggleMobileMenu()"
-                    class="text-white hover:text-dourado p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-dourado rounded-lg bg-black/10 active:bg-black/20"
+                    class="text-white hover:text-dourado p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-dourado rounded-xl bg-black/20 hover:bg-black/40 border border-white/10 transition"
                     aria-label="Abrir Menu Principal">
                     <i class="fa-solid fa-bars text-2xl" id="menuIcon"></i>
                 </button>
@@ -280,34 +351,34 @@
 
         <!-- Drawer Mobile Menu -->
         <div id="mobileMenu"
-            class="hidden lg:hidden bg-bordo-dark/95 backdrop-blur-xl border-t border-dourado/20 px-4 pt-3 pb-8 space-y-2 font-heading font-semibold text-base transition-all">
+            class="hidden lg:hidden bg-bordo-deep/98 backdrop-blur-2xl border-t border-dourado/20 px-4 pt-4 pb-8 space-y-2 font-heading font-semibold text-base shadow-2xl transition-all">
             <a href="#inicio" onclick="toggleMobileMenu()"
-                class="flex items-center gap-3 text-white hover:text-dourado py-3 border-b border-white/10 px-2 rounded-lg hover:bg-white/5 active:bg-white/10">
+                class="flex items-center gap-3 text-white hover:text-dourado py-3 border-b border-white/10 px-3 rounded-xl hover:bg-white/5 active:bg-white/10 transition">
                 <i class="fa-solid fa-house text-dourado w-5"></i>
                 <span>Início</span>
             </a>
             <a href="#sobre" onclick="toggleMobileMenu()"
-                class="flex items-center gap-3 text-white hover:text-dourado py-3 border-b border-white/10 px-2 rounded-lg hover:bg-white/5 active:bg-white/10">
+                class="flex items-center gap-3 text-white hover:text-dourado py-3 border-b border-white/10 px-3 rounded-xl hover:bg-white/5 active:bg-white/10 transition">
                 <i class="fa-solid fa-users text-dourado w-5"></i>
                 <span>Quem Somos</span>
             </a>
             <a href="#ramos" onclick="toggleMobileMenu()"
-                class="flex items-center gap-3 text-white hover:text-dourado py-3 border-b border-white/10 px-2 rounded-lg hover:bg-white/5 active:bg-white/10">
+                class="flex items-center gap-3 text-white hover:text-dourado py-3 border-b border-white/10 px-3 rounded-xl hover:bg-white/5 active:bg-white/10 transition">
                 <i class="fa-solid fa-sitemap text-dourado w-5"></i>
                 <span>Ramos Escoteiros</span>
             </a>
             <a href="#valores" onclick="toggleMobileMenu()"
-                class="flex items-center gap-3 text-white hover:text-dourado py-3 border-b border-white/10 px-2 rounded-lg hover:bg-white/5 active:bg-white/10">
+                class="flex items-center gap-3 text-white hover:text-dourado py-3 border-b border-white/10 px-3 rounded-xl hover:bg-white/5 active:bg-white/10 transition">
                 <i class="fa-solid fa-shield-halved text-dourado w-5"></i>
                 <span>Nossos Valores</span>
             </a>
             <a href="#atividades" onclick="toggleMobileMenu()"
-                class="flex items-center gap-3 text-white hover:text-dourado py-3 border-b border-white/10 px-2 rounded-lg hover:bg-white/5 active:bg-white/10">
+                class="flex items-center gap-3 text-white hover:text-dourado py-3 border-b border-white/10 px-3 rounded-xl hover:bg-white/5 active:bg-white/10 transition">
                 <i class="fa-solid fa-calendar-check text-dourado w-5"></i>
                 <span>Encontros de Sábado</span>
             </a>
             <a href="#contato" onclick="toggleMobileMenu()"
-                class="flex items-center gap-3 text-white hover:text-dourado py-3 border-b border-white/10 px-2 rounded-lg hover:bg-white/5 active:bg-white/10">
+                class="flex items-center gap-3 text-white hover:text-dourado py-3 border-b border-white/10 px-3 rounded-xl hover:bg-white/5 active:bg-white/10 transition">
                 <i class="fa-solid fa-envelope text-dourado w-5"></i>
                 <span>Contato & Sede</span>
             </a>
@@ -315,91 +386,105 @@
             <div class="pt-4 px-2">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNYgY6lo8b4UYHLokWuCgg0rspbuupwT9mJbqn7L3fC3sBqA/closedf"
                     target="_blank" rel="noopener noreferrer"
-                    class="block text-center bg-dourado text-escuro font-bold py-3.5 rounded-xl shadow-lg active:scale-95 transition flex items-center justify-center gap-2">
+                    class="block text-center bg-gradient-to-r from-dourado to-dourado-light text-escuro font-bold py-3.5 rounded-xl shadow-lg active:scale-95 transition flex items-center justify-center gap-2 border border-white/30">
                     <i class="fa-solid fa-pen-to-square"></i>
-                    <span>Fazer Inscrição Agora</span>
+                    <span>Cadastre-se Agora</span>
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section com Vídeo de Fundo Moderno & Parallax -->
     <section id="inicio"
-        class="relative parallax-hero min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center text-white text-center px-4 py-16 sm:py-24">
-        <div class="max-w-4xl mx-auto space-y-6 sm:space-y-8 z-10">
+        class="relative min-h-[90vh] lg:min-h-[95vh] flex items-center justify-center text-white text-center px-4 py-20 overflow-hidden">
+        
+        <!-- Vídeo de Fundo Otimizado -->
+        <div class="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+            <video autoplay loop muted playsinline preload="auto" class="w-full h-full object-cover scale-105 transform">
+                <source src="assets/video.mp4" type="video/mp4">
+                <source src="assets/video.webm" type="video/webm">
+            </video>
+            <!-- Overlays Elegantes para Máxima Legibilidade e Atmosfera Cinematográfica -->
+            <div class="absolute inset-0 bg-gradient-to-b from-bordo-deep/90 via-escuro/80 to-escuro/95"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-black/40 to-black/85"></div>
+            <!-- Grade sutil decorativa -->
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:32px_32px] opacity-40"></div>
+        </div>
 
-            <!-- Badge 15 Anos -->
-            <div
-                class="inline-flex items-center gap-2 bg-dourado/20 border border-dourado/60 px-3.5 py-1.5 rounded-full text-dourado text-xs sm:text-sm font-semibold tracking-wider uppercase backdrop-blur-md shadow-inner">
-                <i class="fa-solid fa-award text-dourado"></i>
-                <span>15 Anos Formando Cidadãos Exemplares</span>
+        <!-- Conteúdo do Hero -->
+        <div class="max-w-4xl mx-auto space-y-6 sm:space-y-8 relative z-10">
+
+            <!-- Badge 15 Anos Flutuante -->
+            <div class="inline-flex items-center gap-2.5 bg-black/40 border border-dourado/70 px-4 py-2 rounded-full text-dourado text-xs sm:text-sm font-semibold tracking-wider uppercase backdrop-blur-md shadow-gold-glow animate-float">
+                <i class="fa-solid fa-award text-dourado-light text-base"></i>
+                <span class="font-heading">15 Anos Formando Jovens Protagonistas</span>
             </div>
 
-            <!-- Título Principal com Responsividade Otimizada -->
+            <!-- Título Principal com Impacto Visual -->
             <h1
-                class="font-heading font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight sm:leading-none tracking-tight drop-shadow-lg text-white">
+                class="font-heading font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight sm:leading-none tracking-tight drop-shadow-2xl text-white">
                 O JOVEM É PROTAGONISTA DA SUA PRÓPRIA VIDA
             </h1>
 
             <!-- Subtítulo e Filosofia do Grupo -->
             <p
-                class="text-base sm:text-xl md:text-2xl text-gray-200 font-normal max-w-3xl mx-auto leading-relaxed sm:leading-relaxed drop-shadow px-2">
-                Aplicamos a <span class="text-dourado font-bold">Excelência Técnica Escoteira</span> e os <span
+                class="text-base sm:text-xl md:text-2xl text-gray-200 font-normal max-w-3xl mx-auto leading-relaxed drop-shadow-md px-2">
+                Descubra a <span class="text-dourado font-bold">Excelência Técnica Escoteira</span> e os <span
                     class="text-dourado font-bold">Valores Cristãos da Promessa</span> como ferramentas essenciais para
                 o autodesenvolvimento de crianças e jovens em Diadema.
             </p>
 
-            <!-- Botões Principais de Ação Mobile-First -->
+            <!-- Botões Principais com Verbos Imperativos -->
             <div
-                class="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3.5 sm:gap-5 pt-4 max-w-md sm:max-w-none mx-auto">
+                class="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-4 pt-4 max-w-md sm:max-w-none mx-auto">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNYgY6lo8b4UYHLokWuCgg0rspbuupwT9mJbqn7L3fC3sBqA/closedf"
                     target="_blank" rel="noopener noreferrer"
-                    class="bg-dourado hover:bg-dourado-light active:bg-dourado-dark text-escuro font-heading font-extrabold text-base sm:text-lg px-8 py-4 rounded-xl shadow-2xl transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 border border-white/30">
+                    class="bg-gradient-to-r from-dourado via-dourado-light to-dourado hover:from-dourado-light hover:to-dourado text-escuro font-heading font-extrabold text-base sm:text-lg px-8 py-4 rounded-2xl shadow-2xl transition-all transform hover:-translate-y-1 hover:shadow-gold-glow-lg flex items-center justify-center gap-3 border border-white/40">
                     <i class="fa-solid fa-file-signature text-xl"></i>
-                    <span>Quero Me Inscrever</span>
+                    <span>Cadastre Seu Filho Hoje</span>
                 </a>
 
                 <a href="#sobre"
-                    class="bg-black/40 hover:bg-white/20 active:bg-white/30 border-2 border-white/80 text-white font-heading font-bold text-base sm:text-lg px-8 py-4 rounded-xl transition-all backdrop-blur-md flex items-center justify-center gap-3">
+                    class="bg-black/50 hover:bg-white/20 active:bg-white/30 border-2 border-white/80 text-white font-heading font-bold text-base sm:text-lg px-8 py-4 rounded-2xl transition-all backdrop-blur-md flex items-center justify-center gap-3 hover:-translate-y-1 shadow-lg">
                     <i class="fa-solid fa-compass text-dourado"></i>
                     <span>Conheça o Grupo</span>
                 </a>
             </div>
 
-            <!-- Informações Rápidas de Sábado e Localização -->
+            <!-- Informações Rápidas em Glassmorphism -->
             <div
                 class="pt-6 sm:pt-10 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-6 text-xs sm:text-sm font-medium text-gray-200">
                 <div
-                    class="flex items-center gap-2 bg-black/60 backdrop-blur-md px-4 py-2.5 rounded-xl border border-white/10 w-full sm:w-auto justify-center">
-                    <i class="fa-regular fa-calendar-check text-dourado text-base"></i>
-                    <span>Sábados: 09h às 11:30h</span>
+                    class="flex items-center gap-2.5 bg-black/60 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/15 shadow-md w-full sm:w-auto justify-center hover:border-dourado/50 transition">
+                    <i class="fa-regular fa-calendar-check text-dourado text-lg"></i>
+                    <span>Reuniões aos Sábados: 09h às 11:30h</span>
                 </div>
                 <div
-                    class="flex items-center gap-2 bg-black/60 backdrop-blur-md px-4 py-2.5 rounded-xl border border-white/10 w-full sm:w-auto justify-center">
-                    <i class="fa-solid fa-map-location-dot text-dourado text-base"></i>
+                    class="flex items-center gap-2.5 bg-black/60 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/15 shadow-md w-full sm:w-auto justify-center hover:border-dourado/50 transition">
+                    <i class="fa-solid fa-map-location-dot text-dourado text-lg"></i>
                     <span>Av. Alda, 801 - Diadema/SP</span>
                 </div>
             </div>
 
         </div>
 
-        <!-- Indicador visual de rolagem -->
+        <!-- Indicador de Rolagem -->
         <a href="#destaques"
-            class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white/70 hover:text-dourado p-2 transition animate-bounce"
+            class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white/70 hover:text-dourado p-2 transition animate-bounce z-10"
             aria-label="Rolar para os destaques">
             <i class="fa-solid fa-chevron-down text-2xl"></i>
         </a>
     </section>
 
-    <!-- Seção de Cards em Destaque (Overlay) -->
-    <section id="destaques" class="relative z-20 -mt-8 sm:-mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Seção de Cards em Destaque (Overlay com Sombras Modernas) -->
+    <section id="destaques" class="relative z-20 -mt-10 sm:-mt-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
 
             <!-- Card 1 -->
             <div
-                class="bg-white rounded-2xl p-5 sm:p-6 shadow-xl border-t-4 border-bordo flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+                class="reveal-on-scroll bg-white rounded-3xl p-6 shadow-xl border-t-4 border-bordo flex items-center gap-4 transition-all duration-300 hover:-translate-y-2 hover:shadow-card-hover border border-gray-100">
                 <div
-                    class="w-12 h-12 sm:w-14 sm:h-14 bg-bordo-soft rounded-2xl flex items-center justify-center text-bordo text-xl sm:text-2xl font-bold flex-shrink-0">
+                    class="w-14 h-14 bg-bordo-soft rounded-2xl flex items-center justify-center text-bordo text-2xl font-bold flex-shrink-0 shadow-inner">
                     <i class="fa-solid fa-award text-dourado"></i>
                 </div>
                 <div>
@@ -410,9 +495,9 @@
 
             <!-- Card 2 -->
             <div
-                class="bg-white rounded-2xl p-5 sm:p-6 shadow-xl border-t-4 border-dourado flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+                class="reveal-on-scroll bg-white rounded-3xl p-6 shadow-xl border-t-4 border-dourado flex items-center gap-4 transition-all duration-300 hover:-translate-y-2 hover:shadow-card-hover border border-gray-100" style="transition-delay: 100ms;">
                 <div
-                    class="w-12 h-12 sm:w-14 sm:h-14 bg-dourado-soft rounded-2xl flex items-center justify-center text-dourado-dark text-xl sm:text-2xl font-bold flex-shrink-0">
+                    class="w-14 h-14 bg-dourado-soft rounded-2xl flex items-center justify-center text-dourado-dark text-2xl font-bold flex-shrink-0 shadow-inner">
                     <i class="fa-solid fa-people-group text-bordo"></i>
                 </div>
                 <div>
@@ -423,27 +508,27 @@
 
             <!-- Card 3 -->
             <div
-                class="bg-white rounded-2xl p-5 sm:p-6 shadow-xl border-t-4 border-bordo flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+                class="reveal-on-scroll bg-white rounded-3xl p-6 shadow-xl border-t-4 border-bordo flex items-center gap-4 transition-all duration-300 hover:-translate-y-2 hover:shadow-card-hover border border-gray-100" style="transition-delay: 200ms;">
                 <div
-                    class="w-12 h-12 sm:w-14 sm:h-14 bg-bordo-soft rounded-2xl flex items-center justify-center text-bordo text-xl sm:text-2xl font-bold flex-shrink-0">
+                    class="w-14 h-14 bg-bordo-soft rounded-2xl flex items-center justify-center text-bordo text-2xl font-bold flex-shrink-0 shadow-inner">
                     <i class="fa-solid fa-cross text-dourado"></i>
                 </div>
                 <div>
                     <h2 class="font-heading font-black text-2xl sm:text-3xl text-bordo">Valores</h2>
-                    <p class="text-xs sm:text-sm text-gray-600 font-medium">Princípios cristãos e compromisso cívico</p>
+                    <p class="text-xs sm:text-sm text-gray-600 font-medium">Princípios cristãos e compromisso ético</p>
                 </div>
             </div>
 
             <!-- Card 4 -->
             <div
-                class="bg-white rounded-2xl p-5 sm:p-6 shadow-xl border-t-4 border-dourado flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+                class="reveal-on-scroll bg-white rounded-3xl p-6 shadow-xl border-t-4 border-dourado flex items-center gap-4 transition-all duration-300 hover:-translate-y-2 hover:shadow-card-hover border border-gray-100" style="transition-delay: 300ms;">
                 <div
-                    class="w-12 h-12 sm:w-14 sm:h-14 bg-dourado-soft rounded-2xl flex items-center justify-center text-dourado-dark text-xl sm:text-2xl font-bold flex-shrink-0">
+                    class="w-14 h-14 bg-dourado-soft rounded-2xl flex items-center justify-center text-dourado-dark text-2xl font-bold flex-shrink-0 shadow-inner">
                     <i class="fa-solid fa-campground text-bordo"></i>
                 </div>
                 <div>
                     <h2 class="font-heading font-black text-2xl sm:text-3xl text-escuro">Prática</h2>
-                    <p class="text-xs sm:text-sm text-gray-600 font-medium">Atividades ao ar livre e acampamentos</p>
+                    <p class="text-xs sm:text-sm text-gray-600 font-medium">Vida ao ar livre e acampamentos reais</p>
                 </div>
             </div>
 
@@ -451,79 +536,79 @@
     </section>
 
     <!-- Seção Quem Somos -->
-    <section id="sobre" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+    <section id="sobre" class="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
             <!-- Imagem e Composição Visual -->
-            <div class="lg:col-span-5 relative order-2 lg:order-1">
+            <div class="lg:col-span-5 relative order-2 lg:order-1 reveal-on-scroll">
                 <div
-                    class="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 w-full h-full border-4 border-dourado rounded-3xl z-0">
+                    class="absolute -top-4 -left-4 w-full h-full border-4 border-dourado rounded-3xl z-0 transform -rotate-1">
                 </div>
                 <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&q=80&w=800"
                     alt="Atividade Escoteira em Equipe"
-                    class="relative z-10 rounded-3xl shadow-2xl object-cover w-full h-[320px] sm:h-[420px]">
+                    class="relative z-10 rounded-3xl shadow-2xl object-cover w-full h-[360px] sm:h-[460px] border border-white/50">
 
-                <!-- Card de Citação Flutuante -->
+                <!-- Card de Citação Flutuante com Efeito Glass -->
                 <div
-                    class="absolute -bottom-5 -right-2 sm:-right-5 z-20 bg-bordo text-white p-4 sm:p-6 rounded-2xl shadow-xl max-w-[220px] sm:max-w-[260px] border border-dourado/30">
-                    <i class="fa-solid fa-quote-left text-dourado text-2xl sm:text-3xl block mb-1"></i>
-                    <p class="text-xs sm:text-sm font-semibold leading-snug italic">"Sempre Alerta para servir a Deus, à
+                    class="absolute -bottom-6 -right-2 sm:-right-6 z-20 bg-gradient-to-br from-bordo to-bordo-dark text-white p-5 sm:p-6 rounded-2xl shadow-2xl max-w-[240px] sm:max-w-[280px] border border-dourado/40 backdrop-blur-md">
+                    <i class="fa-solid fa-quote-left text-dourado text-2xl sm:text-3xl block mb-2"></i>
+                    <p class="text-xs sm:text-sm font-semibold leading-relaxed italic text-gray-100">"Sempre Alerta para servir a Deus, à
                         pátria e ao próximo."</p>
                 </div>
             </div>
 
             <!-- Texto Institucional -->
-            <div class="lg:col-span-7 space-y-5 sm:space-y-6 order-1 lg:order-2">
+            <div class="lg:col-span-7 space-y-6 order-1 lg:order-2 reveal-on-scroll">
                 <div
                     class="inline-flex items-center gap-2 text-bordo font-heading font-bold text-xs sm:text-sm tracking-widest uppercase">
-                    <span class="w-8 h-0.5 bg-dourado"></span>
+                    <span class="w-8 h-1 bg-dourado rounded-full"></span>
                     <span>Nossa Identidade e Propósito</span>
                 </div>
 
-                <h2 class="font-heading font-extrabold text-2xl sm:text-4xl text-escuro leading-tight">
-                    Construindo um futuro melhor através do <span
+                <h2 class="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-escuro leading-tight">
+                    Construa um futuro melhor através do <span
                         class="text-bordo underline decoration-dourado decoration-4">Protagonismo Juvenil</span>
                 </h2>
 
                 <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
                     No <strong>Grupo Escoteiro Leão de Judá</strong>, acreditamos firmemente que o jovem deve ser o
-                    verdadeiro protagonista da sua própria vida. Há 15 anos em Diadema/SP, atuamos com paixão na
+                    verdadeiro protagonista da sua própria vida. Há 15 anos em Diadema/SP, atuamos com dedicação na
                     formação moral, intelectual e cidadã de crianças e adolescentes.
                 </p>
 
                 <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
                     Unimos a consagrada <strong class="text-bordo">Excelência Técnica Escoteira</strong> (atividades de
-                    campo, nós, orientação, acampamentos e vida em equipe) aos <strong class="text-bordo">Valores
+                    campo, nós, orientação, acampamentos e liderança de equipe) aos <strong class="text-bordo">Valores
                         Cristãos da Promessa</strong>. Essa combinação proporciona desenvolvimento integral do caráter e
                     consciência social.
                 </p>
 
                 <!-- Pilares com Ícones -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
-                    <div class="p-4 bg-white rounded-xl shadow-sm border border-gray-200 flex items-start gap-3">
-                        <i class="fa-solid fa-circle-check text-dourado text-xl mt-0.5 flex-shrink-0"></i>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                    <div class="p-4 bg-white rounded-2xl shadow-sm border border-gray-200 flex items-start gap-3.5 hover:border-dourado transition">
+                        <i class="fa-solid fa-circle-check text-dourado text-2xl mt-0.5 flex-shrink-0"></i>
                         <div>
                             <h3 class="font-heading font-bold text-escuro text-sm">Autodesenvolvimento</h3>
-                            <p class="text-xs text-gray-600 mt-0.5">Estímulo constante à autonomia e liderança
+                            <p class="text-xs text-gray-600 mt-1">Estímulo constante à autonomia e liderança
                                 consciente.</p>
                         </div>
                     </div>
 
-                    <div class="p-4 bg-white rounded-xl shadow-sm border border-gray-200 flex items-start gap-3">
-                        <i class="fa-solid fa-circle-check text-dourado text-xl mt-0.5 flex-shrink-0"></i>
+                    <div class="p-4 bg-white rounded-2xl shadow-sm border border-gray-200 flex items-start gap-3.5 hover:border-dourado transition">
+                        <i class="fa-solid fa-circle-check text-dourado text-2xl mt-0.5 flex-shrink-0"></i>
                         <div>
                             <h3 class="font-heading font-bold text-escuro text-sm">Valores Cristãos</h3>
-                            <p class="text-xs text-gray-600 mt-0.5">Respeito, solidariedade e fé como alicerce ético.
+                            <p class="text-xs text-gray-600 mt-1">Respeito, solidariedade e fé como alicerce ético.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="pt-2">
+                <div class="pt-3">
                     <a href="#ramos"
-                        class="inline-flex items-center gap-2 text-bordo font-heading font-bold hover:text-dourado transition text-sm sm:text-base">
-                        <span>Conheça os Ramos por Faixa Etária</span>
-                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                        class="inline-flex items-center gap-2 text-bordo hover:text-dourado-dark font-heading font-bold transition text-sm sm:text-base group">
+                        <span>Descubra os Ramos por Faixa Etária</span>
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
                     </a>
                 </div>
 
@@ -533,17 +618,17 @@
     </section>
 
     <!-- Seção Ramos Escoteiros (Faixas Etárias) -->
-    <section id="ramos" class="py-16 sm:py-24 bg-white border-y border-gray-200">
+    <section id="ramos" class="py-20 sm:py-28 bg-white border-y border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-14 sm:mb-16 reveal-on-scroll">
                 <div
                     class="inline-flex items-center gap-2 text-bordo font-heading font-bold text-xs sm:text-sm tracking-widest uppercase mb-2">
                     <span class="w-6 h-0.5 bg-dourado"></span>
                     <span>Etapas de Desenvolvimento</span>
                     <span class="w-6 h-0.5 bg-dourado"></span>
                 </div>
-                <h2 class="font-heading font-black text-2xl sm:text-4xl text-escuro">
+                <h2 class="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-escuro">
                     Os Ramos do Escotismo
                 </h2>
                 <p class="text-gray-600 mt-3 text-sm sm:text-base">
@@ -557,15 +642,15 @@
 
                 <!-- Card Ramo Lobinho -->
                 <div
-                    class="bg-palha rounded-2xl p-6 border-2 border-transparent hover:border-amber-500 transition-all duration-300 shadow-md hover:shadow-xl flex flex-col justify-between group">
+                    class="reveal-on-scroll bg-palha rounded-3xl p-6 border-2 border-transparent hover:border-amber-500 transition-all duration-300 shadow-md hover:shadow-2xl hover:-translate-y-2 flex flex-col justify-between group">
                     <div>
                         <div class="flex justify-between items-start mb-4">
                             <div
-                                class="w-12 h-12 bg-amber-500 text-white rounded-xl flex items-center justify-center text-2xl font-bold shadow-md">
+                                class="w-12 h-12 bg-amber-500 text-white rounded-2xl flex items-center justify-center text-2xl font-bold shadow-md group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-paw"></i>
                             </div>
                             <span
-                                class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-1 rounded-full border border-amber-300">
+                                class="bg-amber-100 text-amber-800 text-[11px] font-bold px-3 py-1 rounded-full border border-amber-300">
                                 6.5 a 10 anos
                             </span>
                         </div>
@@ -574,13 +659,13 @@
                             Ramo Lobinho</h3>
                         <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
                             Inspirado em "O Livro da Jângal". O aprendizado ocorre por meio de jogos, fantasia e
-                            convivência em alcateia.
+                            convivência fraterna em alcateia.
                         </p>
                     </div>
                     <div class="pt-4 border-t border-gray-200">
                         <span class="text-xs font-bold text-amber-700 block mb-1">Lema: "Melhor Possível"</span>
                         <div class="text-[11px] font-semibold text-gray-500 flex items-center justify-between">
-                            <span>Foco: Socialização & Brincadeiras</span>
+                            <span>Socialização & Descobertas</span>
                             <i class="fa-solid fa-chevron-right text-amber-500"></i>
                         </div>
                     </div>
@@ -588,15 +673,15 @@
 
                 <!-- Card Ramo Escoteiro -->
                 <div
-                    class="bg-palha rounded-2xl p-6 border-2 border-transparent hover:border-emerald-600 transition-all duration-300 shadow-md hover:shadow-xl flex flex-col justify-between group">
+                    class="reveal-on-scroll bg-palha rounded-3xl p-6 border-2 border-transparent hover:border-emerald-600 transition-all duration-300 shadow-md hover:shadow-2xl hover:-translate-y-2 flex flex-col justify-between group" style="transition-delay: 100ms;">
                     <div>
                         <div class="flex justify-between items-start mb-4">
                             <div
-                                class="w-12 h-12 bg-emerald-600 text-white rounded-xl flex items-center justify-center text-2xl font-bold shadow-md">
+                                class="w-12 h-12 bg-emerald-600 text-white rounded-2xl flex items-center justify-center text-2xl font-bold shadow-md group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-compass"></i>
                             </div>
                             <span
-                                class="bg-emerald-100 text-emerald-800 text-[11px] font-bold px-2.5 py-1 rounded-full border border-emerald-300">
+                                class="bg-emerald-100 text-emerald-800 text-[11px] font-bold px-3 py-1 rounded-full border border-emerald-300">
                                 11 a 14 anos
                             </span>
                         </div>
@@ -604,13 +689,13 @@
                             class="font-heading font-extrabold text-xl text-escuro mb-2 group-hover:text-emerald-700 transition">
                             Ramo Escoteiro</h3>
                         <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
-                            Atividades na natureza, trabalho em patrulhas, acampamentos, construções e nós.
+                            Atividades na natureza, trabalho em patrulhas, acampamentos, construções e nós com pioneirias.
                         </p>
                     </div>
                     <div class="pt-4 border-t border-gray-200">
                         <span class="text-xs font-bold text-emerald-700 block mb-1">Lema: "Sempre Alerta"</span>
                         <div class="text-[11px] font-semibold text-gray-500 flex items-center justify-between">
-                            <span>Foco: Autonomia & Aventura</span>
+                            <span>Autonomia & Aventura</span>
                             <i class="fa-solid fa-chevron-right text-emerald-600"></i>
                         </div>
                     </div>
@@ -618,15 +703,15 @@
 
                 <!-- Card Ramo Sênior -->
                 <div
-                    class="bg-palha rounded-2xl p-6 border-2 border-transparent hover:border-bordo transition-all duration-300 shadow-md hover:shadow-xl flex flex-col justify-between group">
+                    class="reveal-on-scroll bg-palha rounded-3xl p-6 border-2 border-transparent hover:border-bordo transition-all duration-300 shadow-md hover:shadow-2xl hover:-translate-y-2 flex flex-col justify-between group" style="transition-delay: 200ms;">
                     <div>
                         <div class="flex justify-between items-start mb-4">
                             <div
-                                class="w-12 h-12 bg-bordo text-white rounded-xl flex items-center justify-center text-2xl font-bold shadow-md">
+                                class="w-12 h-12 bg-bordo text-white rounded-2xl flex items-center justify-center text-2xl font-bold shadow-md group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-mountain text-dourado"></i>
                             </div>
                             <span
-                                class="bg-bordo-soft text-bordo text-[11px] font-bold px-2.5 py-1 rounded-full border border-bordo/20">
+                                class="bg-bordo-soft text-bordo text-[11px] font-bold px-3 py-1 rounded-full border border-bordo/20">
                                 15 a 17 anos
                             </span>
                         </div>
@@ -634,13 +719,13 @@
                             class="font-heading font-extrabold text-xl text-escuro mb-2 group-hover:text-bordo transition">
                             Ramo Sênior</h3>
                         <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
-                            Superação de grandes desafios, jornadas de exploração, liderança e autoconhecimento.
+                            Superação de grandes desafios, jornadas de exploração, liderança e autoconhecimento sólido.
                         </p>
                     </div>
                     <div class="pt-4 border-t border-gray-200">
                         <span class="text-xs font-bold text-bordo block mb-1">Lema: "Sempre Alerta"</span>
                         <div class="text-[11px] font-semibold text-gray-500 flex items-center justify-between">
-                            <span>Foco: Desafios & Liderança</span>
+                            <span>Desafios & Liderança</span>
                             <i class="fa-solid fa-chevron-right text-bordo"></i>
                         </div>
                     </div>
@@ -648,15 +733,15 @@
 
                 <!-- Card Ramo Pioneiro -->
                 <div
-                    class="bg-palha rounded-2xl p-6 border-2 border-transparent hover:border-red-700 transition-all duration-300 shadow-md hover:shadow-xl flex flex-col justify-between group">
+                    class="reveal-on-scroll bg-palha rounded-3xl p-6 border-2 border-transparent hover:border-red-700 transition-all duration-300 shadow-md hover:shadow-2xl hover:-translate-y-2 flex flex-col justify-between group" style="transition-delay: 300ms;">
                     <div>
                         <div class="flex justify-between items-start mb-4">
                             <div
-                                class="w-12 h-12 bg-red-700 text-white rounded-xl flex items-center justify-center text-2xl font-bold shadow-md">
+                                class="w-12 h-12 bg-red-700 text-white rounded-2xl flex items-center justify-center text-2xl font-bold shadow-md group-hover:scale-110 transition-transform">
                                 <i class="fa-solid fa-hand-holding-heart"></i>
                             </div>
                             <span
-                                class="bg-red-100 text-red-800 text-[11px] font-bold px-2.5 py-1 rounded-full border border-red-300">
+                                class="bg-red-100 text-red-800 text-[11px] font-bold px-3 py-1 rounded-full border border-red-300">
                                 18 a 21 anos
                             </span>
                         </div>
@@ -664,14 +749,13 @@
                             class="font-heading font-extrabold text-xl text-escuro mb-2 group-hover:text-red-700 transition">
                             Ramo Pioneiro</h3>
                         <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
-                            Serviço à comunidade, elaboração de projetos de vida e transição consciente para a fase
-                            adulta.
+                            Serviço comunitário, elaboração de projetos de vida e transição consciente para a vida adulta.
                         </p>
                     </div>
                     <div class="pt-4 border-t border-gray-200">
                         <span class="text-xs font-bold text-red-700 block mb-1">Lema: "Servir"</span>
                         <div class="text-[11px] font-semibold text-gray-500 flex items-center justify-between">
-                            <span>Foco: Engajamento Social</span>
+                            <span>Engajamento Social</span>
                             <i class="fa-solid fa-chevron-right text-red-700"></i>
                         </div>
                     </div>
@@ -682,21 +766,21 @@
         </div>
     </section>
 
-    <!-- Seção Nossos Valores (Parallax) -->
-    <section id="valores" class="parallax-valores py-20 sm:py-28 text-white relative">
+    <!-- Seção Nossos Valores com Parallax Modernizado -->
+    <section id="valores" class="parallax-valores py-24 sm:py-32 text-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-            <div class="text-center max-w-3xl mx-auto mb-14">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
                 <div
-                    class="inline-flex items-center gap-2 text-dourado font-heading font-bold text-xs sm:text-sm tracking-widest uppercase mb-2">
+                    class="inline-flex items-center gap-2 text-dourado-light font-heading font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 bg-black/40 px-4 py-1.5 rounded-full border border-dourado/40 backdrop-blur-md">
                     <i class="fa-solid fa-shield-halved"></i>
                     <span>Princípios Inegociáveis</span>
                 </div>
-                <h2 class="font-heading font-black text-2xl sm:text-4xl lg:text-5xl">
+                <h2 class="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-white">
                     Excelência Técnica & Fé
                 </h2>
                 <p class="text-gray-200 mt-3 text-sm sm:text-base max-w-2xl mx-auto">
-                    A Promessa Escoteira é o compromisso de honra que guia nossas ações diárias no grupo e em família.
+                    A Promessa Escoteira é o compromisso de honra que guia nossas ações diárias no grupo, na escola e em família.
                 </p>
             </div>
 
@@ -704,44 +788,41 @@
 
                 <!-- Pilar 1 -->
                 <div
-                    class="bg-black/60 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-dourado/30 hover:border-dourado transition duration-300 hover:shadow-gold-glow">
+                    class="reveal-on-scroll glass-card-dark p-7 sm:p-8 rounded-3xl hover:border-dourado transition duration-300 hover:shadow-gold-glow hover:-translate-y-2">
                     <div
-                        class="w-14 h-14 bg-dourado/20 text-dourado rounded-2xl flex items-center justify-center text-2xl mb-5 border border-dourado/40">
+                        class="w-14 h-14 bg-dourado/20 text-dourado rounded-2xl flex items-center justify-center text-2xl mb-5 border border-dourado/40 shadow-inner">
                         <i class="fa-solid fa-cross"></i>
                     </div>
-                    <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-dourado mb-3">Valores Cristãos</h3>
+                    <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-dourado-light mb-3">Valores Cristãos</h3>
                     <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
-                        Infundimos virtudes como verdade, fraternidade, respeito, dever para com Deus e amor ao próximo
-                        como pilares morais do caráter.
+                        Infundimos virtudes como integridade, fraternidade, respeito ao próximo, dever para com Deus e altruísmo como pilares morais do caráter.
                     </p>
                 </div>
 
                 <!-- Pilar 2 -->
                 <div
-                    class="bg-black/60 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-dourado/30 hover:border-dourado transition duration-300 hover:shadow-gold-glow">
+                    class="reveal-on-scroll glass-card-dark p-7 sm:p-8 rounded-3xl hover:border-dourado transition duration-300 hover:shadow-gold-glow hover:-translate-y-2" style="transition-delay: 150ms;">
                     <div
-                        class="w-14 h-14 bg-dourado/20 text-dourado rounded-2xl flex items-center justify-center text-2xl mb-5 border border-dourado/40">
+                        class="w-14 h-14 bg-dourado/20 text-dourado rounded-2xl flex items-center justify-center text-2xl mb-5 border border-dourado/40 shadow-inner">
                         <i class="fa-solid fa-screwdriver-wrench"></i>
                     </div>
-                    <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-dourado mb-3">Excelência Técnica
+                    <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-dourado-light mb-3">Excelência Técnica
                     </h3>
                     <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
-                        Aplicação do Método Escoteiro: técnica de pioneiria, primeiros socorros, nós, navegação por
-                        bússola e acampamentos.
+                        Aplicação prática do Método Escoteiro: técnicas de pioneiria, primeiros socorros, nós, navegação por bússola e acampamentos.
                     </p>
                 </div>
 
                 <!-- Pilar 3 -->
                 <div
-                    class="bg-black/60 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-dourado/30 hover:border-dourado transition duration-300 hover:shadow-gold-glow">
+                    class="reveal-on-scroll glass-card-dark p-7 sm:p-8 rounded-3xl hover:border-dourado transition duration-300 hover:shadow-gold-glow hover:-translate-y-2" style="transition-delay: 300ms;">
                     <div
-                        class="w-14 h-14 bg-dourado/20 text-dourado rounded-2xl flex items-center justify-center text-2xl mb-5 border border-dourado/40">
+                        class="w-14 h-14 bg-dourado/20 text-dourado rounded-2xl flex items-center justify-center text-2xl mb-5 border border-dourado/40 shadow-inner">
                         <i class="fa-solid fa-person-hiking"></i>
                     </div>
-                    <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-dourado mb-3">Aprender Fazendo</h3>
+                    <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-dourado-light mb-3">Aprender Fazendo</h3>
                     <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
-                        Metodologia prática que estimula autoconfiança, superação de obstáculos e protagonismo real
-                        diante da sociedade.
+                        Metodologia ativa que estimula autoconfiança, capacidade resolutiva, superação de obstáculos e protagonismo real diante da sociedade.
                     </p>
                 </div>
 
@@ -751,33 +832,37 @@
     </section>
 
     <!-- Seção Atividades e Encontros -->
-    <section id="atividades" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="atividades" class="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div
-            class="bg-bordo rounded-3xl p-6 sm:p-12 text-white shadow-2xl relative overflow-hidden border border-dourado/30">
+            class="reveal-on-scroll bg-gradient-to-br from-bordo via-bordo-dark to-bordo-deep rounded-3xl p-6 sm:p-12 text-white shadow-2xl relative overflow-hidden border border-dourado/30">
+
+            <!-- Círculos decorativos de fundo -->
+            <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-dourado/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -left-20 -top-20 w-80 h-80 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
 
-                <div class="lg:col-span-7 space-y-5">
+                <div class="lg:col-span-7 space-y-6">
                     <div
-                        class="inline-flex items-center gap-2 bg-dourado text-escuro font-bold text-xs uppercase px-3 py-1 rounded-full">
+                        class="inline-flex items-center gap-2 bg-gradient-to-r from-dourado to-dourado-light text-escuro font-bold text-xs uppercase px-3.5 py-1.5 rounded-full shadow-md">
                         <i class="fa-solid fa-calendar-days"></i>
                         <span>Encontros Presenciais</span>
                     </div>
 
                     <h2 class="font-heading font-black text-2xl sm:text-4xl lg:text-5xl text-white leading-tight">
-                        Reuniões Todos os <span class="text-dourado underline decoration-white">Sábados</span>
+                        Participe dos Encontros aos <span class="text-dourado underline decoration-white">Sábados</span>
                     </h2>
 
                     <p class="text-gray-200 text-sm sm:text-base leading-relaxed">
                         Oferecemos um ambiente dinâmico, alegre e seguro para que o seu filho desenvolva novas
-                        habilidades e faça amizades para a vida inteira.
+                        habilidades, exercite a liderança e faça amizades para a vida inteira.
                     </p>
 
                     <!-- Detalhes de Horário e Endereço -->
-                    <div class="bg-bordo-dark/90 p-5 rounded-2xl border border-dourado/40 space-y-4">
+                    <div class="bg-black/40 backdrop-blur-md p-5 rounded-2xl border border-dourado/40 space-y-4 shadow-inner">
                         <div class="flex items-center gap-4">
                             <div
-                                class="w-12 h-12 bg-dourado text-bordo font-bold rounded-xl flex items-center justify-center text-xl flex-shrink-0">
+                                class="w-12 h-12 bg-dourado text-bordo font-bold rounded-2xl flex items-center justify-center text-xl flex-shrink-0 shadow-md">
                                 <i class="fa-solid fa-clock"></i>
                             </div>
                             <div>
@@ -790,7 +875,7 @@
 
                         <div class="flex items-center gap-4 pt-3 border-t border-white/10">
                             <div
-                                class="w-12 h-12 bg-white/10 text-dourado rounded-xl flex items-center justify-center text-xl flex-shrink-0">
+                                class="w-12 h-12 bg-white/10 text-dourado rounded-2xl flex items-center justify-center text-xl flex-shrink-0 border border-white/10">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
                             <div>
@@ -799,7 +884,7 @@
                                     Local da Sede</h3>
                                 <p class="text-white font-semibold text-sm sm:text-base">Avenida Alda, 801 - Centro,
                                     Diadema - SP</p>
-                                <p class="text-xs text-dourado">CEP 09910-170</p>
+                                <p class="text-xs text-dourado-light font-medium">CEP 09910-170</p>
                             </div>
                         </div>
                     </div>
@@ -807,24 +892,24 @@
 
                 <!-- Card Interativo para Agendar Visita -->
                 <div
-                    class="lg:col-span-5 bg-white text-escuro rounded-2xl p-6 sm:p-8 shadow-2xl text-center space-y-5 border border-gray-100">
+                    class="lg:col-span-5 bg-white text-escuro rounded-3xl p-6 sm:p-8 shadow-2xl text-center space-y-5 border border-gray-100">
                     <div
-                        class="w-16 h-16 bg-bordo-soft text-bordo rounded-2xl flex items-center justify-center mx-auto text-2xl font-bold">
+                        class="w-16 h-16 bg-bordo-soft text-bordo rounded-2xl flex items-center justify-center mx-auto text-2xl font-bold shadow-inner">
                         <i class="fa-solid fa-door-open text-dourado"></i>
                     </div>
 
-                    <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-bordo">Venha Conhecer uma Atividade!
+                    <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-bordo">Agende uma Visita Conosco!
                     </h3>
                     <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">
                         Pais e responsáveis são muito bem-vindos para acompanhar um sábado de atividades experimentais e
-                        conversar com nossa chefia escoteira.
+                        conversar diretamente com nossa chefia escoteira.
                     </p>
 
                     <a href="https://wa.me/5511996467356?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20Grupo%20Escoteiro%20Le%C3%A3o%20de%20Jud%C3%A1."
                         target="_blank" rel="noopener noreferrer"
-                        class="w-full bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-heading font-bold py-3.5 px-4 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 min-h-[48px]">
+                        class="w-full bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-heading font-bold py-3.5 px-4 rounded-2xl transition-all transform hover:-translate-y-0.5 shadow-lg flex items-center justify-center gap-2 min-h-[48px]">
                         <i class="fa-brands fa-whatsapp text-xl"></i>
-                        <span>Falar no WhatsApp da Secretaria</span>
+                        <span>Fale no WhatsApp da Secretaria</span>
                     </a>
                 </div>
 
@@ -832,59 +917,65 @@
         </div>
     </section>
 
-    <!-- Seção FAQ -->
-    <section class="py-16 sm:py-20 bg-palha border-t border-gray-200">
+    <!-- Seção FAQ Accordion -->
+    <section class="py-20 sm:py-24 bg-palha border-t border-gray-200">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
+            <div class="text-center mb-12 reveal-on-scroll">
+                <div
+                    class="inline-flex items-center gap-2 text-bordo font-heading font-bold text-xs tracking-widest uppercase mb-2">
+                    <span class="w-6 h-0.5 bg-dourado"></span>
+                    <span>Tire Suas Dúvidas</span>
+                    <span class="w-6 h-0.5 bg-dourado"></span>
+                </div>
                 <h2 class="font-heading font-black text-2xl sm:text-4xl text-escuro">
                     Perguntas Frequentes
                 </h2>
-                <p class="text-gray-600 mt-2 text-xs sm:text-sm">Respostas para as dúvidas mais comuns dos pais</p>
+                <p class="text-gray-600 mt-2 text-xs sm:text-sm">Respostas para as dúvidas mais comuns dos pais e responsáveis</p>
             </div>
 
-            <div class="space-y-3.5" id="faqAccordion">
+            <div class="space-y-4" id="faqAccordion">
 
                 <!-- FAQ Item 1 -->
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="reveal-on-scroll bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-300 hover:border-dourado">
                     <button onclick="toggleFaq(1)"
-                        class="w-full text-left p-4 sm:p-5 font-heading font-bold text-escuro text-sm sm:text-base flex justify-between items-center hover:text-bordo transition min-h-[52px]">
+                        class="w-full text-left p-5 font-heading font-bold text-escuro text-sm sm:text-base flex justify-between items-center hover:text-bordo transition min-h-[56px] focus:outline-none">
                         <span class="pr-2">Qual é a idade mínima para ingressar no grupo?</span>
                         <i class="fa-solid fa-chevron-down text-dourado transition-transform duration-300 flex-shrink-0"
                             id="faqIcon-1"></i>
                     </button>
                     <div id="faqAnswer-1"
-                        class="hidden p-4 sm:p-5 pt-0 text-gray-600 text-xs sm:text-sm leading-relaxed border-t border-gray-100">
+                        class="hidden p-5 pt-0 text-gray-600 text-xs sm:text-sm leading-relaxed border-t border-gray-100">
                         Acolhemos crianças a partir dos 6 anos e meio no Ramo Lobinho. O movimento escoteiro acompanha o
-                        jovem até os 21 anos incompletos no Ramo Pioneiro.
+                        jovem continuamente até os 21 anos incompletos no Ramo Pioneiro.
                     </div>
                 </div>
 
                 <!-- FAQ Item 2 -->
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="reveal-on-scroll bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-300 hover:border-dourado" style="transition-delay: 100ms;">
                     <button onclick="toggleFaq(2)"
-                        class="w-full text-left p-4 sm:p-5 font-heading font-bold text-escuro text-sm sm:text-base flex justify-between items-center hover:text-bordo transition min-h-[52px]">
+                        class="w-full text-left p-5 font-heading font-bold text-escuro text-sm sm:text-base flex justify-between items-center hover:text-bordo transition min-h-[56px] focus:outline-none">
                         <span class="pr-2">É necessário ter experiência anterior?</span>
                         <i class="fa-solid fa-chevron-down text-dourado transition-transform duration-300 flex-shrink-0"
                             id="faqIcon-2"></i>
                     </button>
                     <div id="faqAnswer-2"
-                        class="hidden p-4 sm:p-5 pt-0 text-gray-600 text-xs sm:text-sm leading-relaxed border-t border-gray-100">
+                        class="hidden p-5 pt-0 text-gray-600 text-xs sm:text-sm leading-relaxed border-t border-gray-100">
                         Não! Qualquer criança ou jovem pode ingressar em qualquer momento do ano. Nossos chefes orientam
-                        desde o primeiro dia todo o aprendizado da Promessa, canções e técnicas escoteiras.
+                        desde o primeiro dia todo o aprendizado da Promessa, canções, valores e técnicas escoteiras.
                     </div>
                 </div>
 
                 <!-- FAQ Item 3 -->
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="reveal-on-scroll bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-300 hover:border-dourado" style="transition-delay: 200ms;">
                     <button onclick="toggleFaq(3)"
-                        class="w-full text-left p-4 sm:p-5 font-heading font-bold text-escuro text-sm sm:text-base flex justify-between items-center hover:text-bordo transition min-h-[52px]">
+                        class="w-full text-left p-5 font-heading font-bold text-escuro text-sm sm:text-base flex justify-between items-center hover:text-bordo transition min-h-[56px] focus:outline-none">
                         <span class="pr-2">Como faço para inscrever meu filho?</span>
                         <i class="fa-solid fa-chevron-down text-dourado transition-transform duration-300 flex-shrink-0"
                             id="faqIcon-3"></i>
                     </button>
                     <div id="faqAnswer-3"
-                        class="hidden p-4 sm:p-5 pt-0 text-gray-600 text-xs sm:text-sm leading-relaxed border-t border-gray-100">
-                        Você pode preencher o formulário online disponível no botão "INSCREVA-SE" deste site ou
+                        class="hidden p-5 pt-0 text-gray-600 text-xs sm:text-sm leading-relaxed border-t border-gray-100">
+                        Você pode preencher o formulário online disponível no botão "Cadastre-se Agora" deste site ou
                         comparecer pessoalmente à nossa sede em um sábado, às 09h.
                     </div>
                 </div>
@@ -893,40 +984,40 @@
         </div>
     </section>
 
-    <!-- Banner Parallax Final CTA -->
-    <section class="parallax-cta py-20 sm:py-28 text-center text-white px-4">
-        <div class="max-w-3xl mx-auto space-y-6">
-            <div
-                class="w-16 h-16 bg-dourado/20 rounded-full flex items-center justify-center mx-auto border border-dourado/50">
-                <i class="fa-solid fa-shield-cat text-3xl text-dourado"></i>
+    <!-- Banner Parallax Final CTA com Logo em Destaque -->
+    <section class="parallax-cta py-24 sm:py-32 text-center text-white px-4 relative">
+        <div class="max-w-3xl mx-auto space-y-6 relative z-10 reveal-on-scroll">
+            <div class="relative inline-block">
+                <img src="assets/logo.jpg" alt="Logo Leão de Judá"
+                    class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl mx-auto border-2 border-dourado shadow-gold-glow object-cover p-1 bg-bordo-dark">
             </div>
 
-            <h2 class="font-heading font-black text-3xl sm:text-5xl leading-tight">
-                Venha Fazer Parte do Nosso Grupo
+            <h2 class="font-heading font-black text-3xl sm:text-5xl leading-tight text-white drop-shadow-lg">
+                Faça Parte do Grupo Escoteiro Leão de Judá
             </h2>
 
-            <p class="text-gray-200 text-sm sm:text-lg max-w-2xl mx-auto">
-                Inscreva seu filho ou venha atuar como adulto voluntário no Grupo Escoteiro Leão de Judá.
+            <p class="text-gray-200 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                Cadastre seu filho ou venha atuar como adulto voluntário e ajude a transformar o futuro das próximas gerações.
             </p>
 
-            <div class="pt-2">
+            <div class="pt-4">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNYgY6lo8b4UYHLokWuCgg0rspbuupwT9mJbqn7L3fC3sBqA/closedf"
                     target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center gap-3 bg-dourado hover:bg-dourado-light active:bg-dourado-dark text-escuro font-heading font-black text-base sm:text-xl px-8 sm:px-10 py-4 sm:py-5 rounded-2xl shadow-2xl transition transform hover:scale-105 border border-white/30">
+                    class="inline-flex items-center gap-3 bg-gradient-to-r from-dourado via-dourado-light to-dourado hover:from-dourado-light hover:to-dourado text-escuro font-heading font-black text-base sm:text-xl px-9 sm:px-12 py-4 sm:py-5 rounded-2xl shadow-2xl transition transform hover:scale-105 hover:shadow-gold-glow-lg border border-white/40">
                     <i class="fa-solid fa-paper-plane"></i>
-                    <span>Abrir Formulário de Inscrição</span>
+                    <span>Cadastre-se no Formulário Oficial</span>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Seção Contato e Localização -->
-    <section id="contato" class="py-16 sm:py-20 bg-white">
+    <section id="contato" class="py-20 sm:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
 
                 <!-- Informações de Contato -->
-                <div class="lg:col-span-5 space-y-6">
+                <div class="lg:col-span-5 space-y-6 reveal-on-scroll">
                     <div>
                         <div
                             class="inline-flex items-center gap-2 text-bordo font-heading font-bold text-xs tracking-widest uppercase mb-1">
@@ -934,30 +1025,30 @@
                             <span>Canais de Atendimento</span>
                         </div>
                         <h2 class="font-heading font-black text-2xl sm:text-3xl text-escuro">Fale com a Secretaria</h2>
-                        <p class="text-gray-600 mt-1 text-xs sm:text-sm">Estamos prontos para atende-lo e tirar suas
+                        <p class="text-gray-600 mt-1 text-xs sm:text-sm">Estamos prontos para atender você e esclarecer suas
                             dúvidas.</p>
                     </div>
 
                     <div class="space-y-4">
                         <!-- Telefone -->
-                        <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-palha border border-gray-100">
+                        <div class="flex items-start gap-3.5 p-4 rounded-2xl bg-palha border border-gray-100 hover:border-dourado/50 transition">
                             <div
-                                class="w-10 h-10 bg-bordo-soft text-bordo rounded-xl flex items-center justify-center text-lg flex-shrink-0">
+                                class="w-11 h-11 bg-bordo-soft text-bordo rounded-xl flex items-center justify-center text-lg flex-shrink-0 shadow-inner">
                                 <i class="fa-solid fa-phone text-dourado"></i>
                             </div>
                             <div>
                                 <h3 class="font-heading font-bold text-escuro text-sm">Telefone / WhatsApp</h3>
                                 <p class="text-gray-700 font-semibold text-sm">(11) 99646-7356</p>
                                 <a href="https://wa.me/5511996467356" target="_blank"
-                                    class="text-xs text-bordo hover:underline font-bold mt-0.5 inline-block">Conversar
-                                    pelo WhatsApp</a>
+                                    class="text-xs text-bordo hover:underline font-bold mt-0.5 inline-block">Converse
+                                    pelo WhatsApp &rarr;</a>
                             </div>
                         </div>
 
                         <!-- E-mail -->
-                        <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-palha border border-gray-100">
+                        <div class="flex items-start gap-3.5 p-4 rounded-2xl bg-palha border border-gray-100 hover:border-dourado/50 transition">
                             <div
-                                class="w-10 h-10 bg-bordo-soft text-bordo rounded-xl flex items-center justify-center text-lg flex-shrink-0">
+                                class="w-11 h-11 bg-bordo-soft text-bordo rounded-xl flex items-center justify-center text-lg flex-shrink-0 shadow-inner">
                                 <i class="fa-solid fa-envelope text-dourado"></i>
                             </div>
                             <div>
@@ -968,32 +1059,32 @@
                         </div>
 
                         <!-- Endereço -->
-                        <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-palha border border-gray-100">
+                        <div class="flex items-start gap-3.5 p-4 rounded-2xl bg-palha border border-gray-100 hover:border-dourado/50 transition">
                             <div
-                                class="w-10 h-10 bg-bordo-soft text-bordo rounded-xl flex items-center justify-center text-lg flex-shrink-0">
+                                class="w-11 h-11 bg-bordo-soft text-bordo rounded-xl flex items-center justify-center text-lg flex-shrink-0 shadow-inner">
                                 <i class="fa-solid fa-location-dot text-dourado"></i>
                             </div>
                             <div>
                                 <h3 class="font-heading font-bold text-escuro text-sm">Endereço da Sede</h3>
-                                <p class="text-gray-700 text-xs sm:text-sm">Avenida Alda, 801 - Centro</p>
-                                <p class="text-gray-700 text-xs sm:text-sm">Diadema - SP, CEP 09910-170</p>
+                                <p class="text-gray-700 text-xs sm:text-sm font-semibold">Avenida Alda, 801 - Centro</p>
+                                <p class="text-gray-600 text-xs sm:text-sm">Diadema - SP, CEP 09910-170</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Redes Sociais -->
                     <div class="pt-2">
-                        <h3 class="font-heading font-bold text-xs uppercase tracking-wider text-gray-500 mb-2.5">Nossas
+                        <h3 class="font-heading font-bold text-xs uppercase tracking-wider text-gray-500 mb-3">Nossas
                             Redes Sociais</h3>
                         <div class="flex gap-3">
                             <a href="https://www.instagram.com/ge_leaodejuda/" target="_blank" rel="noopener noreferrer"
-                                class="w-11 h-11 bg-bordo text-white rounded-xl flex items-center justify-center hover:bg-dourado hover:text-escuro transition shadow-md"
-                                aria-label="Acessar Instagram do Grupo">
+                                class="w-12 h-12 bg-bordo text-white rounded-2xl flex items-center justify-center hover:bg-dourado hover:text-escuro transition-all transform hover:-translate-y-1 shadow-md"
+                                aria-label="Acesse o Instagram Oficial">
                                 <i class="fa-brands fa-instagram text-xl"></i>
                             </a>
                             <a href="https://wa.me/5511996467356" target="_blank" rel="noopener noreferrer"
-                                class="w-11 h-11 bg-emerald-600 text-white rounded-xl flex items-center justify-center hover:bg-emerald-700 transition shadow-md"
-                                aria-label="Acessar WhatsApp do Grupo">
+                                class="w-12 h-12 bg-emerald-600 text-white rounded-2xl flex items-center justify-center hover:bg-emerald-700 transition-all transform hover:-translate-y-1 shadow-md"
+                                aria-label="Acesse o WhatsApp Oficial">
                                 <i class="fa-brands fa-whatsapp text-xl"></i>
                             </a>
                         </div>
@@ -1001,19 +1092,18 @@
                 </div>
 
                 <!-- Mapa Incorporado Responsivo -->
-                <div class="lg:col-span-7">
+                <div class="lg:col-span-7 reveal-on-scroll">
                     <div
-                        class="bg-palha p-3 sm:p-4 rounded-3xl border border-gray-200 shadow-md h-full flex flex-col justify-between">
-                        <div class="w-full h-[300px] sm:h-[380px] rounded-2xl overflow-hidden border border-gray-300">
+                        class="bg-palha p-4 sm:p-5 rounded-3xl border border-gray-200 shadow-md h-full flex flex-col justify-between">
+                        <div class="w-full h-[320px] sm:h-[400px] rounded-2xl overflow-hidden border border-gray-300 shadow-inner">
                             <iframe title="Mapa da Sede do Grupo Escoteiro Leão de Judá"
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.256421319232!2d-46.6267803!3d-23.6846995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce445749f99f35%3A0x6b8dd8f9bf68eb1a!2sAv.%20Alda%2C%20801%20-%20Centro%2C%20Diadema%20-%20SP%2C%2009910-170!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
                                 class="w-full h-full border-0" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
                         </div>
-                        <div class="text-center pt-2.5 text-[11px] sm:text-xs text-gray-500 font-medium">
-                            <i class="fa-solid fa-location-crosshairs text-dourado"></i> Localização central em Diadema
-                            - SP
+                        <div class="text-center pt-3 text-[11px] sm:text-xs text-gray-600 font-medium">
+                            <i class="fa-solid fa-location-crosshairs text-dourado"></i> Localização central e de fácil acesso em Diadema - SP
                         </div>
                     </div>
                 </div>
@@ -1023,17 +1113,16 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-escuro text-white pt-10 pb-8 border-t-4 border-dourado">
+    <footer class="bg-escuro text-white pt-12 pb-8 border-t-4 border-dourado">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-white/10">
 
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-dourado rounded-xl flex items-center justify-center text-bordo font-bold">
-                        <i class="fa-solid fa-shield-cat text-xl"></i>
-                    </div>
+                    <img src="assets/logo.jpg" alt="Logo Leão de Judá"
+                        class="w-12 h-12 rounded-xl border border-dourado/50 object-cover p-0.5 bg-bordo-dark">
                     <div>
-                        <span class="font-heading font-extrabold text-base sm:text-lg block">LEÃO DE JUDÁ</span>
-                        <span class="text-[11px] text-dourado block">Grupo Escoteiro em Diadema/SP</span>
+                        <span class="font-heading font-extrabold text-base sm:text-lg block tracking-wide text-white">LEÃO DE JUDÁ</span>
+                        <span class="text-[11px] text-dourado block font-semibold">Grupo Escoteiro em Diadema/SP • 15 Anos</span>
                     </div>
                 </div>
 
@@ -1046,21 +1135,30 @@
                     <a href="#contato" class="hover:text-dourado transition">Contato</a>
                 </div>
 
-                <div class="text-xs text-dourado font-bold tracking-wider uppercase">
+                <div class="text-xs text-dourado font-bold tracking-widest uppercase flex items-center gap-2">
+                    <i class="fa-solid fa-shield-cat"></i>
                     <span>Sempre Alerta!</span>
                 </div>
 
             </div>
 
-            <div class="pt-6 text-center text-[11px] sm:text-xs text-gray-500">
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-[11px] sm:text-xs text-gray-500 gap-3">
                 <p>&copy; 2026 Grupo Escoteiro Leão de Judá. Todos os direitos reservados.</p>
+                <p class="text-gray-400 font-medium">Diadema - São Paulo</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript para Interatividade e Acessibilidade -->
+    <!-- Botão Flutuante Voltar ao Topo -->
+    <button id="backToTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="fixed bottom-6 right-6 z-40 bg-bordo hover:bg-dourado hover:text-escuro text-white w-12 h-12 rounded-2xl shadow-2xl flex items-center justify-center transition-all duration-300 opacity-0 pointer-events-none transform translate-y-4 border border-white/20"
+        aria-label="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up text-lg"></i>
+    </button>
+
+    <!-- JavaScript para Interatividade, Animações e Parallax -->
     <script>
-        // Alternar visualização do menu mobile
+        // Alternar menu mobile
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             const icon = document.getElementById('menuIcon');
@@ -1106,13 +1204,13 @@
                     bodyElement.style.fontSize = '100%';
                     break;
                 case 1:
-                    bodyElement.style.fontSize = '110%';
+                    bodyElement.style.fontSize = '108%';
                     break;
                 case 2:
-                    bodyElement.style.fontSize = '120%';
+                    bodyElement.style.fontSize = '116%';
                     break;
                 case 3:
-                    bodyElement.style.fontSize = '130%';
+                    bodyElement.style.fontSize = '125%';
                     break;
             }
         }
@@ -1122,10 +1220,62 @@
             bodyElement.style.fontSize = '100%';
         }
 
-        // Alternar modo de Alto Contraste
+        // Alternar Alto Contraste
         function toggleHighContrast() {
             document.body.classList.toggle('high-contrast');
         }
+
+        // Barra de Progresso de Rolagem, Efeito no Header e Botão Topo
+        const header = document.getElementById('mainHeader');
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        const progressBar = document.getElementById('scrollProgressBar');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+            if (progressBar) {
+                progressBar.style.width = scrollPercent + '%';
+            }
+
+            // Header glass shadow on scroll
+            if (scrollTop > 40) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            // Back to top button visibility
+            if (scrollTop > 400) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                backToTopBtn.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                backToTopBtn.classList.remove('opacity-100', 'translate-y-0');
+            }
+        });
+
+        // Intersection Observer para animações suaves ao rolar (Reveal on Scroll)
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.12,
+                rootMargin: '0px 0px -40px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+                observer.observe(el);
+            });
+        });
     </script>
 </body>
 
